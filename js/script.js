@@ -52,29 +52,70 @@
 // console.log(personalMovieDB);
 
 
+
+/* example */
+// console.log( NaN || 2 || undefined );
+ 
+// console.log( NaN && 2 && undefined );
+ 
+// console.log( 1 && 2 && 3 );
+ 
+// console.log( !1 && 2 || !3 );
+ 
+// console.log( 25 || null && !3 );
+ 
+// console.log( NaN || null || !3 || undefined || 5);
+ 
+// console.log( NaN || null && !3 && undefined || 5);
+
+
+// console.log(5 === 5 && 3 > 1 || 5);
+
+// const hamburger = 3;
+// const fries = 3;
+// const cola = 0;
+// const nuggets = 2;
+ 
+// if (hamburger === 3 && cola || fries === 3 && nuggets) {
+//    console.log('Done!')
+// }
+
+
 /* my code +++ */
-const numberOfFilms = +prompt('Сколько фильмов вы посмотрели?');
+// const numberOfFilms = +prompt('Сколько фильмов вы посмотрели?');
 
-const personalMovieDB = {
-    count: numberOfFilms,
-    movies: {},
-    actors: {},
-    genres: [],
-    privat: false
-};
-const a = prompt('Один из последних просмотренных фильмов', ''),
-      b = prompt('Какую оценку ему дадите?', ''),
-      e = prompt('Actors?', ''),
-      c = prompt('Один из последних просмотренных фильмов', ''),
-      d = prompt('Какую оценку ему дадите?', ''),
-      f = prompt('Actors?', '');
+// const personalMovieDB = {
+//     count: numberOfFilms,
+//     movies: {},
+//     actors: {},
+//     genres: [],
+//     privat: false
+// };
+// const a = prompt('Один из последних просмотренных фильмов', ''),
+//       b = prompt('Какую оценку ему дадите?', ''),
+//       e = prompt('Actors?', ''),
+//       c = prompt('Один из последних просмотренных фильмов', ''),
+//       d = prompt('Какую оценку ему дадите?', ''),
+//       f = prompt('Actors?', '');
 
-personalMovieDB.movies[a] = b;
-personalMovieDB.movies[c] = d;
-personalMovieDB.actors [a] = e;
-personalMovieDB.actors [c] = f;
+// personalMovieDB.movies[a] = b;
+// personalMovieDB.movies[c] = d;
+// personalMovieDB.actors = [e];
+// personalMovieDB.actors = [f];
 
-console.log(personalMovieDB);
+// console.log(personalMovieDB);
+// console.log(`Я посмотрел ${numberOfFilms} фильмов`);
+
+
+// const num = +prompt('Введите число');
+
+// if (num == 50) {
+//     console.log('ok');
+// } else if (num <= 49) {
+//     console.log('small');
+// } else {
+//     console.log('big');
+// }
 
 /* example */
 // const numberOfFilms = +prompt('Сколько фильмов вы уже просмотрели?');
