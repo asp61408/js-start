@@ -1,6 +1,121 @@
 "use strict";
 
+/* 29 lesson */
 
+/* Задание на урок:
+
+1) Первую часть задания повторить по уроку
+
+2) Создать функцию showMyDB, которая будет проверять свойство privat. Если стоит в позиции
+false - выводит в консоль главный объект программы
+
+3) Создать функцию writeYourGenres в которой пользователь будет 3 раза отвечать на вопрос 
+"Ваш любимый жанр под номером ${номер по порядку}". Каждый ответ записывается в массив данных
+genres
+
+P.S. Функции вызывать не обязательно*/
+
+
+
+
+
+// function randomInteger(min, max) {
+//     return Math.round(min + Math.random() * (max - min));
+// }
+
+// alert(randomInteger(1, 7));
+
+// function random(min, max) {
+//   return min + Math.random() * (max - min);
+// }
+
+// let randNum = random(1, 3);
+
+// alert(randNum);
+
+// randNum = Math.trunc(randNum);
+
+// alert(randNum);
+
+// let num = +prompt('Введите число', '');
+
+// function readNumber() {
+//     while (typeof num != 'number') {
+//         num = prompt('Введите число', '');
+//     }
+//     if (num == '' || num == null) {
+//         return null;
+//     }
+//     return +num;
+// }
+
+// readNumber();
+// console.log(readNumber());
+
+
+// let num = prompt('To Number', '');
+// function readNumber() {
+//     while (Number.isNaN(+num)) {  
+//       num = prompt('Number', '');  
+//     }
+//     if (!num) {                           //!num = !undefined, !null, !false, !0, !'' Boolean(num)
+//         return null;
+//     }
+//     return +num;
+// }
+
+// console.log(readNumber());
+
+
+// let a = +prompt('1 num', '');
+// let b = +prompt('2 num', '');
+// alert(a + b);
+
+
+// console.log(9999999999999999);
+
+
+// function checkSpam(spam) {
+//     let lowerStr = spam.toLowerCase();
+// //     if (lowerStr.includes('viagra') || lowerStr.includes('xxx')) {
+// //         console.log('true');
+// //         return;
+// //     } else {
+// //         console.log('false');
+// //         return false;
+// //     }
+
+//     return lowerStr.includes('viagra') || lowerStr.includes('xxx');
+// }
+
+// alert(checkSpam('viagra'));
+// alert(checkSpam('fj fjf jfjfj'));
+// alert(checkSpam('xxx'));
+
+// let check = checkSpam();
+
+// console.log(check());
+// console.log(check('xxx'));
+// console.log(check('fjfjfjff'));
+
+
+// function ucFirst(name) {
+//     if (!name) {
+//       return name;
+//     }
+//         console.log(name[0].toUpperCase() + name.slice(1));
+//         return name[0].toUpperCase() + name.slice(1);
+// }
+
+// let user = ucFirst('vasya');
+// console.log(user);
+
+
+// let str = "Widget with id";
+
+// if (~str.indexOf("Widget")) {
+//     alert("Совпадение есть"); // не работает
+// }
 
 
 // function sayHello(name) {
