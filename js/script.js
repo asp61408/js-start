@@ -15,6 +15,83 @@ genres
 
 P.S. Функции вызывать не обязательно*/
 
+let numberOfFilms;
+
+function start() {
+    numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+    while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
+        numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+    }
+}
+
+start();
+
+const personalMovieDB = {
+    count: numberOfFilms,
+    movies: {},
+    actors: {},
+    genres: [],
+    privat: false
+};
+
+function rememberMyFilms() {
+    for (let i = 0; i < 2; i++) {
+        const a = prompt('Один из последних просмотренных фильмов?', '');
+        const b = prompt('На сколько оцените его?', '');
+    
+        if (a != null && b != null && a != '' && b != '' && a.length < 50 && !isNaN(b)) {
+            personalMovieDB.movies[a] = b;
+            console.log('done');
+        } else {
+            console.log('error');
+            i--;
+        }
+    }
+}
+
+rememberMyFilms();
+
+function detectedPersonalLevel() {
+    if (personalMovieDB.count <= 10) {
+        console.log('Просмотрено довольно мало фильмов');
+    } else if (personalMovieDB.count > 10 && personalMovieDB.count <= 30) {
+        console.log('Вы классический зритель');
+    } else if (personalMovieDB.count > 30) {
+        console.log('Вы киноман');
+    } else {
+        console.log('error');
+    }
+}
+
+detectedPersonalLevel();
+
+/* My code */
+function showMyDB() {
+    if (personalMovieDB.privat == false) {
+        console.log(personalMovieDB);
+    }
+}
+
+/* Code by Ivan */
+
+// function showMyDB(hidden) {
+//     if (!hidden) {
+//         console.log(personalMovieDB);
+//     }
+// }
+
+showMyDB();
+
+function writeYourGenres() {
+    for (let i = 0; i < 3; i++) {
+        personalMovieDB.genres[i] = prompt(`Ваш любимый жанр ${i + 1}`);
+    }
+}
+
+writeYourGenres();
+
+// console.log(personalMovieDB);
+
 
 
 
@@ -312,31 +389,6 @@ P.S. Функции вызывать не обязательно*/
 //     console.log('Ok');
 // }
 
-
-// const numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
-
-// const personalMovieDB = {
-//     count: numberOfFilms,
-//     movies: {},
-//     actors: {},
-//     genres: [],
-//     privat: false
-// };
-
-// const a = prompt('Один из просмотренных фильмов?', '');
-// const b = prompt('Насколько оцените его?', '');
-// const c = prompt('Один из просмотренных фильмов?', '');
-// const d = prompt('Насколько оцените его?', '');
-
-// personalMovieDB.movies[a] = b;
-// personalMovieDB.movies[c] = d;
-
-// console.log(personalMovieDB);
-
-// 
-// 
-// 
-// 
 
 /* learn JS */
 
