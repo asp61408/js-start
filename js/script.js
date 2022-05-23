@@ -1,5 +1,91 @@
 "use strict";
 
+/* exercise 8 (*) */
+
+// function findMaxNumber() {
+//     if (arguments.length != 4) {
+//         return '000';
+//     }
+//     for (let i = 0; i < arguments.length; i++) {
+//         if (typeof arguments[i] != 'number') {
+//             return 'aaa';
+//         }
+//     }
+//     return Math.max(...arguments);
+// }
+
+// // findMaxNumber(Math.max(1, 2, 3, 4));
+// console.log(findMaxNumber(1, 5, 3, 4));
+
+
+// function getTimeFromMinutes(minutes) {
+
+//     let hours = Math.floor(minutes / 60);
+//     let min = minutes % 60;
+
+//     if (isNaN(minutes) || minutes < 0 || !Number.isInteger(minutes) || !minutes) {
+//         return `Ошибка, проверьте данные`;
+//     }
+//     if (hours >= 5) {
+//         return `Это ${hours} часов и ${min} минут`;
+//     }
+//     if (hours == 1) {
+//         return `Это ${hours} час и ${min} минут`;
+//     }
+//     if (hours < 5 && hours > 1) {
+//         return `Это ${hours} часа и ${min} минут`;
+//     }
+//     if (minutes === 0) {
+//         return `Это ${hours} часов и ${min} минут`;
+//     }
+
+// }
+
+// getTimeFromMinutes();
+
+// console.log(getTimeFromMinutes());
+
+// console.log(typeof getTimeFromMinutes());
+
+
+/* exercise 7 (*) */
+
+// function getCoupeNumber(numTicket) {
+    
+//     let numCoupe = numTicket / 4;
+//     if (!Number.isInteger(numTicket) || numTicket < 0) {
+//         return 'Ошибка. Проверьте правильность введенного номера места';
+//     }
+//     if (numTicket === 0 || numTicket >= 36) {
+//         return 'Таких мест в вагоне не существует';
+//     }
+//     return Math.ceil(numCoupe);
+// }
+
+// getCoupeNumber();
+
+// console.log(getCoupeNumber(0));
+
+// let area;
+// let volume;
+
+// function calculateVolumeAndArea(length) {
+//     area = length * length * 6;
+//     volume = length * length * length;
+//     if (!Number.isInteger(length) || length <= 0 || length == 'string') {
+//         return 'При вычислении произошла ошибка';
+//     }
+//     return `Объем куба: ${volume}, площадь всей поверхности: ${area}`;
+// }
+
+// calculateVolumeAndArea();
+
+// console.log(calculateVolumeAndArea(4));
+
+// console.log(`Объем куба: ${volume}, площадь всей поверхности: ${area}`);
+    
+
+
 /* 29 lesson */
 
 /* Задание на урок:
@@ -15,82 +101,82 @@ genres
 
 P.S. Функции вызывать не обязательно*/
 
-let numberOfFilms;
+// let numberOfFilms;
 
-function start() {
-    numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
-    while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
-        numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
-    }
-}
+// function start() {
+//     numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+//     while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
+//         numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+//     }
+// }
 
-start();
+// start();
 
-const personalMovieDB = {
-    count: numberOfFilms,
-    movies: {},
-    actors: {},
-    genres: [],
-    privat: false
-};
+// const personalMovieDB = {
+//     count: numberOfFilms,
+//     movies: {},
+//     actors: {},
+//     genres: [],
+//     privat: false
+// };
 
-function rememberMyFilms() {
-    for (let i = 0; i < 2; i++) {
-        const a = prompt('Один из последних просмотренных фильмов?', '');
-        const b = prompt('На сколько оцените его?', '');
+// function rememberMyFilms() {
+//     for (let i = 0; i < 2; i++) {
+//         const a = prompt('Один из последних просмотренных фильмов?', '');
+//         const b = prompt('На сколько оцените его?', '');
     
-        if (a != null && b != null && a != '' && b != '' && a.length < 50 && !isNaN(b)) {
-            personalMovieDB.movies[a] = b;
-            console.log('done');
-        } else {
-            console.log('error');
-            i--;
-        }
-    }
-}
+//         if (a != null && b != null && a != '' && b != '' && a.length < 50 && !isNaN(b)) {
+//             personalMovieDB.movies[a] = b;
+//             console.log('done');
+//         } else {
+//             console.log('error');
+//             i--;
+//         }
+//     }
+// }
 
-rememberMyFilms();
+// rememberMyFilms();
 
-function detectedPersonalLevel() {
-    if (personalMovieDB.count <= 10) {
-        console.log('Просмотрено довольно мало фильмов');
-    } else if (personalMovieDB.count > 10 && personalMovieDB.count <= 30) {
-        console.log('Вы классический зритель');
-    } else if (personalMovieDB.count > 30) {
-        console.log('Вы киноман');
-    } else {
-        console.log('error');
-    }
-}
+// function detectedPersonalLevel() {
+//     if (personalMovieDB.count <= 10) {
+//         console.log('Просмотрено довольно мало фильмов');
+//     } else if (personalMovieDB.count > 10 && personalMovieDB.count <= 30) {
+//         console.log('Вы классический зритель');
+//     } else if (personalMovieDB.count > 30) {
+//         console.log('Вы киноман');
+//     } else {
+//         console.log('error');
+//     }
+// }
 
-detectedPersonalLevel();
+// detectedPersonalLevel();
 
-/* My code */
-function showMyDB() {
-    if (personalMovieDB.privat == false) {
-        console.log(personalMovieDB);
-    }
-}
-
-/* Code by Ivan */
-
-// function showMyDB(hidden) {
-//     if (!hidden) {
+// /* My code */
+// function showMyDB() {
+//     if (personalMovieDB.privat == false) {
 //         console.log(personalMovieDB);
 //     }
 // }
 
-showMyDB();
+// /* Code by Ivan */
 
-function writeYourGenres() {
-    for (let i = 0; i < 3; i++) {
-        personalMovieDB.genres[i] = prompt(`Ваш любимый жанр ${i + 1}`);
-    }
-}
+// // function showMyDB(hidden) {
+// //     if (!hidden) {
+// //         console.log(personalMovieDB);
+// //     }
+// // }
 
-writeYourGenres();
+// showMyDB();
 
-// console.log(personalMovieDB);
+// function writeYourGenres() {
+//     for (let i = 0; i < 3; i++) {
+//         personalMovieDB.genres[i] = prompt(`Ваш любимый жанр ${i + 1}`);
+//     }
+// }
+
+// writeYourGenres();
+
+// // console.log(personalMovieDB);
 
 
 
