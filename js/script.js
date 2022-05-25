@@ -1,5 +1,50 @@
 "use strict";
 
+
+
+
+
+/* exercise 9** */
+
+
+/* semen */
+// function fib(fibLen) {
+//     const fibArr = [0, 1];
+
+//     if(!Number.isInteger(fibLen) || fibLen < 0) {
+//         return ''
+//     }
+//     if(fibLen < 3) {
+//         return fibArr.slice(0, fibLen).join(' ')
+//     }
+    
+//     while (fibLen != fibArr.length) {
+//         fibArr.push(fibArr[fibArr.length - 2] + fibArr[fibArr.length - 1]);
+//     }
+//     return fibArr.join(' ');
+// }
+
+
+
+/* my code(work) */
+// function fib(fibLen) {
+//     const arr = [0, 1];
+//     if (!Number.isInteger(fibLen)) {
+//         return '000';
+//     }
+
+//     for (let i = 2; i < fibLen; i++) {
+//         let nextNumFib = arr[i - 1] + arr[i - 2];
+//             arr.push(nextNumFib);
+//             // console.log(arr);
+//     }
+//     return arr;
+// }
+
+// console.log(fib(5));
+
+
+
 /* exercise 8 (*) */
 
 // function findMaxNumber() {
