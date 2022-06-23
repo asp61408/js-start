@@ -1,5 +1,514 @@
 "use strict";
 
+/* result scool */
+// let type = 1;
+// let cells = [100, 50, 20, 80, 30, 10, 60];
+// let sum = 0;
+
+// if (type === 1) {
+//     for (let i = 0; i < cells.length; i+= 2) {
+//         sum += cells[i];
+//     }
+// } else if (type === 2) {
+//     for (let i = 1; i < cells.length; i+= 2) {
+//         sum += cells[i];
+//     }
+// } else {
+//     for (let i = 0; i < cells.length; i++) {
+//         sum += cells[i];
+//     }
+// }
+// console.log(sum);
+
+
+// let type = 2;
+// let stopNumber = 6;
+// let sum = 0;
+
+// if (type === 1) {
+//     for (let i = 0; i < stopNumber; i+= 2) {
+//         sum += i;
+//     }
+// } else if (type === 2) {
+//     for (let i = 1; i < stopNumber; i+= 2) {
+//         sum += i;
+//     }
+// } else {
+//     for (let i = 0; i < stopNumber; i++) {
+//         sum += i;
+//     }
+// }
+
+// console.log(sum);
+
+
+// let a = 10;
+// let b = 15;
+
+// if (a > b) {
+//     console.log(a + b);
+// } else if (a < b) {
+//     console.log(b - a);
+// } else {
+//     console.log(a);
+// }
+
+
+// let cells = [100, 50, 20, 80, 30, 10, 60];
+
+// let sum = 0;
+
+// for (let i = 0; i < cells.length; i++) {
+//     sum += cells[i] * (i + cells.length);
+// }
+
+// console.log(sum);
+
+
+// const numberOfFilms = prompt('Сколько фильмов вы уже посмотрели?', '');
+
+// const personalMovieDB = {
+//     count: numberOfFilms,
+//     movies: {},
+//     actors: {},
+//     genres: [],
+//     privat: false,
+// };
+
+// const a = prompt('Один из последних просмотренных фильмов?', '');
+// const b = prompt('На сколько оцените его?', '');
+// const c = prompt('Один из последних просмотренных фильмов?', '');
+// const d = prompt('На сколько оцените его?', '');
+
+// personalMovieDB.movies[a] = b;
+// personalMovieDB.movies[c] = d;
+
+// console.log(personalMovieDB);
+
+
+/* exercise 12 */
+
+/* 1 Напишите функцию reverse, которая принимает в себя строку
+ и возвращает эту строку в обратном порядке */
+
+// const someString = 'This is some strange string';
+
+// function reverse(str) {
+//     // return str.split('').reverse().join('');
+//     if (typeof str !== 'string') {
+//         return 'Ошибка';
+//     }
+//     let arrStr = str.split('');
+//     let newStr = '';
+//     for (let i = str.length - 1; i >= 0; i--) {
+//         newStr += arrStr[i];
+//     }
+//     return newStr;
+// }
+
+// console.log(reverse(someString));
+
+
+/* 2 Создать главную функцию банкомата availableCurr, которая принимает 2 аргумента:
+ 1-й - массив со всеми доступными валютами из 2-х банков(не повторяются),
+  2-й - необязательный, который показывает, какая валюта закончилась в банкомате.
+   Если массив в 1-м аргументе пустой, возвращаем строку - "Нет доступных валют" */
+
+const baseCurrencies = ['USD', 'EUR'];
+const additionalCurrencies = ['UAH', 'RUB', 'CNY'];
+
+function availableCurr(arr, missingCurr) {
+    const newArr = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] != missingCurr[i]) {
+            newArr.push(arr[i]);
+        } else {
+            continue;
+        }
+    }
+
+    let allCurr = 'Доступные валюты:' + '\n';
+    let listMissingCurr = '';
+
+    if (missingCurr) {
+        for (let i = 0; i < missingCurr.length; i++) {
+            listMissingCurr += missingCurr[i] + '\n';
+        }
+        // return listMissingCurr;
+    }
+    if (arr == 0) {
+        return 'Нет доступных валют';
+    }
+    for (let i = 0; i < newArr.length; i++) {
+        allCurr += newArr[i] + '\n';
+    }
+    return allCurr;
+}
+
+// console.log(availableCurr(listMissingCurr));
+console.log(availableCurr(['USD', 'EUR', 'UAH', 'CNY', 'RUB'], ['CNY']));
+
+
+/* exercise 11 */
+
+/* 1 Напишите функцию showFamily, которая будет принимать в себя массив строк
+ и возвращать сообщение в нужном формате */
+
+
+// const family = ['Peter', 'Ann', 'Alex', 'Linda'];
+
+// function showFamily(arr) {
+//     let result = 'Семья состоит из: ';
+//     if (arr.length === 0) {
+//         return 'Семья пуста';
+//     }
+//     for (let i = 0; i < arr.length; i++) {
+//         result += arr[i] + ' ';
+//     }
+//     return result;
+// }
+
+// console.log(showFamily(family));
+
+
+/* Напишите функцию standardizeStrings, которая будет принимать в себя массив строк
+ и будет выводить в консоль эти строки в нижнем регистре */
+
+// const favoriteCities = ['liSBon', 'ROME', 'miLan', 'Dublin'];
+
+// function standardizeStrings(arr) {
+//     // let stringArr = favoriteCities.join();
+//     let stringArr = '';
+//     for (let i = 0; i < arr.length; i++) {
+//         stringArr += i + 1 + ' |  ' + arr[i] + '\n';
+//     }
+//     return stringArr.toLowerCase();
+// }
+
+// console.log(standardizeStrings(favoriteCities));
+
+
+// (i + 1) + ' |  ' +
+
+
+
+/* exercise 10 */
+
+
+/* 1 напишите функцию showExperience, которая будет принимать в себя объект 
+со всеми данными и возвращть строку с опытом*/
+
+// const personalPlanPeter = {
+//     name: "Peter",
+//     age: "29",
+//     skills: {
+//         languages: ['ru', 'eng'],
+//         programmingLangs: {
+    //             js: '20%',
+    //             php: '10%'
+    //         },
+    //         exp: '1 month'
+    //     }
+    // };
+        
+// function showExperience() {
+//     return personalPlanPeter.skills.exp;
+// }    
+    
+// console.log(showExperience());
+    
+
+/* 2 Напишите функцию showProgrammingLangs, которая будет принимать 
+в себя объект со всеми данными и возвращать строку в нужном виде*/
+
+
+// function showProgrammingLangs(plan) {
+    //     const programmingLangs = personalPlanPeter.skills.programmingLangs;    /*деструктуриз. programmingLangs{}*/
+    //     const languages = Object.keys(programmingLangs);        /*создаем массив с ключами объекта programmingLangs*/
+    //     // console.log(languages.length);       /* Вывел в консоль длину массива для проверки(для себя) */
+    //     if (languages.length === 0) {        /* проверка на пустой массив */
+    //         return '000';
+    //     }
+    //     let result = '';         /* переменная для строки с результатом */
+//     for (let i = 0; i < languages.length; i++) {         /* перебор массива с 0 до длины */
+//         result += `Язык ${languages[i]} изучен на ${programmingLangs[languages[i]]}\n`;  /*создание строки в result*/
+//     }
+//     return result;      /* возвращаем созданную строку */
+// }
+
+// console.log(showProgrammingLangs(personalPlanPeter));
+
+
+
+/* 3 Создайте метод showAgeAndLangs внутри объекта personalPlanPeter. 
+При его вызове метод будет принимать в себя объект и возвращать строку в нужном виде*/
+
+// const personalPlanPeter = {
+//     name: "Peter",
+//     age: "29",
+//     skills: {
+//         languages: ['ru', 'eng'],
+//         programmingLangs: {
+//             js: '20%',
+//             php: '10%',
+//             ruby: '30%'
+//         },
+//         exp: '1 month'
+//     },
+//     showAgeAndLangs: function() {                                          /* создаем метод в {} */
+//         const showLangs = personalPlanPeter.skills.languages;              /* деструкт. {} */
+//         const languages = Object.keys(showLangs);                             /* создаем массив из ключей {} */
+        
+//         let result = `Мне ${personalPlanPeter.age} и я владею языками: `;   /* создаем строку */
+//         for (let i = 0; i < languages.length; i++) {                      /* перебираем ключи из {} в массиве */
+//             result += `${showLangs[languages[i]].toUpperCase()} `;   /* записываем результ по индексам из фор */
+//         } 
+//         return result;   /* возвращаем результ */
+//     }
+// };
+
+// personalPlanPeter.showAgeAndLangs();
+// console.log(personalPlanPeter.showAgeAndLangs());
+
+
+
+/* Найти самое длинное слово в строке и вернуть его */
+
+// function getBigWord(str) {
+    //     const strin = str.split(' ');
+//     let longWord = '';
+//     for (let i = 0; i < strin.length; i++) {
+//         if (strin[i].length > longWord.length) {
+//         }
+//     }
+//     return longWord;
+// }
+
+// console.log(getBigWord('fff jjjjjjj fljlk jgfuytyud jhj gfgygy'));
+
+
+
+/* вернуть слова без '-' */
+
+// function splitStr(str, splitSymbol) {
+//     const symbolIndexes = [];
+//     for (let i = 0; i < str.length; i++) {
+//         if (str[i] === splitSymbol) {
+//             symbolIndexes.push(i);
+//         }
+//     }
+//     const result = [];
+//     symbolIndexes.forEach((index, i, arr) => {
+//         if (i === 0) {
+//             result.push(str.slice(0, index));
+//             return;
+//         }
+
+//         result.push(str.slice(arr[i - 1] + 1, index));
+
+//         if (i === arr.length - 1) {
+//             result.push(str.slice(index + 1));
+//         }
+//     });
+//     return result;
+// }
+
+// console.log(splitStr('aaa-bbb-ccc-eee-fff', '-'));
+
+
+
+
+/* 35 lesson */
+
+// let a = 5;
+// let b = a;
+
+// b = b + 5;          // Примитивы не перезаписываются  a = 5 
+
+// console.log(b);
+// console.log(a);
+
+// const obj = {
+//     a: 5,
+//     b: 10
+// };
+
+// const copy = obj;
+
+// copy.a = 10;       // Objects перезаписываются, потому что присваиваются по ссылке
+
+// console.log(copy);
+// console.log(obj);
+
+// function copy(mainObj) {
+//     let objCopy = {};               // Создаем пустой объект
+
+//     let key;
+//     for (key in mainObj) {
+//         objCopy[key] = mainObj[key];      // Копируем mainObj в objCopy
+//     }
+//     return objCopy;
+// }
+
+// const numbers = {
+//     a: 5,
+//     b: 7,
+//     c: {
+//         x: 4,
+//         y: 7
+//     }
+// };
+
+// const newNumbers = copy(numbers);         // Вызываем функцию copy(), которая копирует объект
+
+// newNumbers.a = 10;    // Изменяет только копию
+// newNumbers.c.x = 10;  // Изменяет оба объекта
+
+// // console.log(newNumbers);
+// // console.log(numbers);
+
+// const add = {
+//     d: 10,
+//     e: 17
+// };
+
+// // console.log(Object.assign(numbers, add));  // Добавляем в numbers объект add
+
+// const clone = Object.assign({}, add);  // Added in 'clone' object 'add'
+
+// clone.d = 20;                          // change object 'clone' 
+
+// console.log(add);
+// console.log(clone);
+
+// const oldArray = ['a', 'b', 'c'];           // массив
+// const newArray = oldArray.slice();          // копируем массив методом slice()--!!!можно передать количество значений
+
+// newArray[1] = 'aaaaaaaaaaaa';
+// console.log(oldArray);
+// console.log(newArray);
+
+
+
+// const video = ['youtube', 'vimeo', 'rutube'],
+//       blogs = ['livejournal', 'blogger'],
+//       internet = [...video, ...blogs, 'vk', 'facebook'];  // ... spread оператор разворачивает объект
+
+// console.log(internet);
+
+
+
+// function log(a, b, c) {
+//     console.log(a);
+//     console.log(b);
+//     console.log(c);
+// }
+// const num = [2, 5, 7];
+
+// log(...num);               // ... spread оператор
+
+
+
+// const arr = ['aaa', '222'];
+// const newArr = [...arr];           // Копирование массива 
+
+// console.log(newArr);
+// newArr[0] = 'bbb';
+
+// console.log(newArr);
+// console.log(arr);
+
+
+// const obj = {
+//     one: 1,
+//     two: 2
+// };
+
+// const newObj = {...obj};          // Копирование объекта
+
+// console.log(newObj);
+// newObj.one = 22;
+
+// console.log(newObj);
+
+
+/* 33 lesson */
+
+// const arr = [11, 12, 3, 24, 5, 6];
+// arr.sort(compareNum);
+
+// console.log(arr.join('   '));
+
+// function compareNum(a, b) {
+//     return a - b;
+// }
+
+
+// arr[99] = 0;
+// console.log(arr.length);
+// console.log(arr);
+
+// arr.pop();
+// arr.push(10);
+
+// console.log(arr);
+
+// for (let i = 0; i < arr.length; i++) {
+//     console.log(arr[i]);
+// }
+
+// for (let value of arr) {
+//     console.log(value);
+// }
+
+// arr.forEach(function(item, i, arr) {
+//     console.log(`${i}: ${item} внутри массива ${arr}`);
+// });
+
+// const str = prompt('', '');
+// const products = str.split(", ");
+// products.sort();
+// console.log(products.join("; "));
+
+
+/* 32 lesson */
+
+// const options = {
+//     name: 'test',
+//     width: 1024,
+//     height: 1024,
+//     colors: {
+//         border: 'black',
+//         bg: 'red'
+//     },
+//     makeTest: function() {
+//         console.log('Test');
+//     }
+// };
+
+// options.makeTest();
+
+// const {border, bg} = options.colors;
+// console.log(border);
+
+// console.log(Object.keys(options).length);
+
+// console.log(options.name);
+
+// delete options.name;
+// console.log(options);
+
+// console.log(options['colors']['border']);
+
+// for (let key in options) {
+//     if (typeof(options[key]) === 'object') {
+//         for (let i in options[key]) {
+//             console.log(`Свойство ${i} имеет значение ${options[key][i]}`);
+//         }
+//     } else {
+//         console.log(`Свойство ${key} имеет значение ${options[key]}`);
+//     }
+// }
 
 
 
