@@ -108,6 +108,61 @@
 
 // console.log(reverse(someString));
 
+// const hamburger = 1;
+//       cola = 1;
+//       fries = 0;
+
+// if ((hamburger + cola + fries) === 3) {
+//     console.log('ok');
+// } else {
+//     console.log('dont ok');
+// }
+
+
+
+let result = '';
+let lenght = 7;
+
+for (let i = 1; i < lenght; i++) {
+    for (let j = 0; j < i; j++) {
+        result += '*';
+    }
+    result += '\n';
+}
+console.log(result);
+
+
+
+let num = 0;
+
+for (let i = 0; i < 100; i++) {
+    num ++;
+    if (num % 3 == 0 && num % 5 == 0) {
+        console.log('FizzBuzz');
+        continue;
+    }
+    if (num % 3 == 0) {
+        console.log('Fizz');
+        continue;
+    }
+    if (num % 5 == 0) {
+        console.log('Buzz');
+        continue;
+    }
+    console.log(num);
+}
+
+
+
+let results = '';
+let lenghts = 8;
+
+for (let i = 1; i < lenghts; i++) {
+    for (let j = lenghts; ; ) {
+        
+    } 
+}
+
 
 /* 2 Создать главную функцию банкомата availableCurr, которая принимает 2 аргумента:
  1-й - массив со всеми доступными валютами из 2-х банков(не повторяются),
