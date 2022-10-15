@@ -1,5 +1,6 @@
 "use strict";
 
+
 /* result scool */
 // let type = 1;
 // let cells = [100, 50, 20, 80, 30, 10, 60];
@@ -119,7 +120,7 @@
 // }
 
 
-
+/* 
 let result = '';
 let lenght = 7;
 
@@ -129,9 +130,11 @@ for (let i = 1; i < lenght; i++) {
     }
     result += '\n';
 }
-console.log(result);
+console.log(result); */
 
 
+
+// FizzBuzz
 
 let num = 0;
 
@@ -154,15 +157,53 @@ for (let i = 0; i < 100; i++) {
 
 
 
-let results = '';
-let lenghts = 8;
+// треугольник
 
-for (let i = 1; i < lenghts; i++) {
-    for (let j = lenghts; ; ) {
-        
+let result = '';
+let lenght = 7;
+
+for (let i = 1; i < lenght; i++) {
+    for (let j = 0; j < i; j++) {
+        result += '*';
+    }
+    result += '\n';
+}
+console.log(result);
+
+
+
+// шахматная доска
+
+let results = '';
+let size = 8;
+
+for (let i = 1; i < size; i++) {
+
+    for (let j = 0; j < size / 2; j++ ) {
+        if (i % 2 != 0) {
+            results += ' ' + '#';
+        }
+        else {
+            results += '#' + ' ';
+        }
     } 
+    results += '\n';
 }
 
+console.log(results);
+
+
+
+// пример из книги
+
+const power = (base, exponent) => { 
+    let result = 1; 
+    for (let count = 0; count < exponent; count++) { 
+    result *= base; 
+    } 
+    return result; 
+    };
+    console.log(power(2, 3));
 
 /* 2 Создать главную функцию банкомата availableCurr, которая принимает 2 аргумента:
  1-й - массив со всеми доступными валютами из 2-х банков(не повторяются),
