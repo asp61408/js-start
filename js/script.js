@@ -1,5 +1,32 @@
 "use strict";
 
+// #2 IvanP 
+
+// let numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+
+// let personalMovieDB = {
+//     count: numberOfFilms,
+//     movies: {},
+//     actors: {},
+//     genres: [],
+//     privat: false 
+// };
+
+// let a = prompt('Какой последний из просмотренных фильмов?', ''),
+//     b = prompt('На сколько оцените его?', ''),
+//     c = prompt('Какой последний из просмотренных фильмов?', ''),
+//     d = prompt('На сколько оцените его?', '');
+
+// personalMovieDB.movies[a] = b;
+// personalMovieDB.movies[c] = d;
+
+// console.log(personalMovieDB);
+
+
+
+
+
+
 
 /* result scool */
 // let type = 1;
@@ -136,113 +163,113 @@ console.log(result); */
 
 // FizzBuzz
 
-let num = 0;
+// let num = 0;
 
-for (let i = 0; i < 100; i++) {
-    num ++;
-    if (num % 3 == 0 && num % 5 == 0) {
-        console.log('FizzBuzz');
-        continue;
-    }
-    if (num % 3 == 0) {
-        console.log('Fizz');
-        continue;
-    }
-    if (num % 5 == 0) {
-        console.log('Buzz');
-        continue;
-    }
-    console.log(num);
-}
+// for (let i = 0; i < 100; i++) {
+//     num ++;
+//     if (num % 3 == 0 && num % 5 == 0) {
+//         console.log('FizzBuzz');
+//         continue;
+//     }
+//     if (num % 3 == 0) {
+//         console.log('Fizz');
+//         continue;
+//     }
+//     if (num % 5 == 0) {
+//         console.log('Buzz');
+//         continue;
+//     }
+//     console.log(num);
+// }
 
 
 
 // треугольник
 
-let result = '';
-let lenght = 7;
+// let result = '';
+// let lenght = 7;
 
-for (let i = 1; i < lenght; i++) {
-    for (let j = 0; j < i; j++) {
-        result += '*';
-    }
-    result += '\n';
-}
-console.log(result);
-
-
-
-// шахматная доска
-
-let results = '';
-let size = 8;
-
-for (let i = 1; i < size; i++) {
-
-    for (let j = 0; j < size / 2; j++ ) {
-        if (i % 2 != 0) {
-            results += ' ' + '#';
-        }
-        else {
-            results += '#' + ' ';
-        }
-    } 
-    results += '\n';
-}
-
-console.log(results);
+// for (let i = 1; i < lenght; i++) {
+//     for (let j = 0; j < i; j++) {
+//         result += '*';
+//     }
+//     result += '\n';
+// }
+// console.log(result);
 
 
 
-// пример из книги
+// // шахматная доска
 
-const power = (base, exponent) => { 
-    let result = 1; 
-    for (let count = 0; count < exponent; count++) { 
-    result *= base; 
-    } 
-    return result; 
-    };
-    console.log(power(2, 3));
+// let results = '';
+// let size = 8;
+
+// for (let i = 1; i < size; i++) {
+
+//     for (let j = 0; j < size / 2; j++ ) {
+//         if (i % 2 != 0) {
+//             results += ' ' + '#';
+//         }
+//         else {
+//             results += '#' + ' ';
+//         }
+//     } 
+//     results += '\n';
+// }
+
+// console.log(results);
+
+
+
+// // пример из книги
+
+// const power = (base, exponent) => { 
+//     let result = 1; 
+//     for (let count = 0; count < exponent; count++) { 
+//     result *= base; 
+//     } 
+//     return result; 
+//     };
+//     console.log(power(2, 3));
 
 /* 2 Создать главную функцию банкомата availableCurr, которая принимает 2 аргумента:
  1-й - массив со всеми доступными валютами из 2-х банков(не повторяются),
   2-й - необязательный, который показывает, какая валюта закончилась в банкомате.
    Если массив в 1-м аргументе пустой, возвращаем строку - "Нет доступных валют" */
 
-const baseCurrencies = ['USD', 'EUR'];
-const additionalCurrencies = ['UAH', 'RUB', 'CNY'];
+// const baseCurrencies = ['USD', 'EUR'];
+// const additionalCurrencies = ['UAH', 'RUB', 'CNY'];
 
-function availableCurr(arr, missingCurr) {
-    const newArr = [];
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i] != missingCurr[i]) {
-            newArr.push(arr[i]);
-        } else {
-            continue;
-        }
-    }
+// function availableCurr(arr, missingCurr) {
+//     const newArr = [];
+//     for (let i = 0; i < arr.length; i++) {
+//         if (arr[i] != missingCurr[i]) {
+//             newArr.push(arr[i]);
+//         } else {
+//             continue;
+//         }
+//     }
 
-    let allCurr = 'Доступные валюты:' + '\n';
-    let listMissingCurr = '';
+//     let allCurr = 'Доступные валюты:' + '\n';
+//     let listMissingCurr = '';
 
-    if (missingCurr) {
-        for (let i = 0; i < missingCurr.length; i++) {
-            listMissingCurr += missingCurr[i] + '\n';
-        }
-        // return listMissingCurr;
-    }
-    if (arr == 0) {
-        return 'Нет доступных валют';
-    }
-    for (let i = 0; i < newArr.length; i++) {
-        allCurr += newArr[i] + '\n';
-    }
-    return allCurr;
-}
+//     if (missingCurr) {
+//         for (let i = 0; i < missingCurr.length; i++) {
+//             listMissingCurr += missingCurr[i] + '\n';
+//         }
+//         // return listMissingCurr;
+//     }
+//     if (arr == 0) {
+//         return 'Нет доступных валют';
+//     }
+//     for (let i = 0; i < newArr.length; i++) {
+//         allCurr += newArr[i] + '\n';
+//     }
+//     return allCurr;
+// }
 
-// console.log(availableCurr(listMissingCurr));
-console.log(availableCurr(['USD', 'EUR', 'UAH', 'CNY', 'RUB'], ['CNY']));
+// // console.log(availableCurr(listMissingCurr));
+// console.log(availableCurr(['USD', 'EUR', 'UAH', 'CNY', 'RUB'], ['CNY']));
 
 
 /* exercise 11 */
