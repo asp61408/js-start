@@ -2,28 +2,26 @@
 
 // #2 IvanP 
 
-// let numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
 
-// let personalMovieDB = {
-//     count: numberOfFilms,
-//     movies: {},
-//     actors: {},
-//     genres: [],
-//     privat: false 
-// };
+const numberOfFilms = +prompt("Сколько фильмов Вы посмотрели?", '');
 
-// let a = prompt('Какой последний из просмотренных фильмов?', ''),
-//     b = prompt('На сколько оцените его?', ''),
-//     c = prompt('Какой последний из просмотренных фильмов?', ''),
-//     d = prompt('На сколько оцените его?', '');
+const personalMovieDB = {
+    count: numberOfFilms,
+    movies: {},
+    actors: {},
+    genres: [],
+    privat: false
+};
 
-// personalMovieDB.movies[a] = b;
-// personalMovieDB.movies[c] = d;
+const a = prompt('Один из последних просмотренных фильмов?', ''),
+      b = prompt('Ваша оценка:', ''),
+      c = prompt('Один из последних просмотренных фильмов?', ''),
+      d = prompt('Ваша оценка:', '');
 
-// console.log(personalMovieDB);
+personalMovieDB.movies[a] = b;
+personalMovieDB.movies[c] = d;
 
-
-
+console.log(personalMovieDB);
 
 
 
