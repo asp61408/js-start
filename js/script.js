@@ -3,7 +3,17 @@
 // #2 IvanP 
 
 
-const numberOfFilms = +prompt("Сколько фильмов Вы посмотрели?", '');
+let numberOfFilms;
+
+function start() {
+    numberOfFilms = +prompt("Сколько фильмов Вы посмотрели?", '');
+
+    while(numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
+        numberOfFilms = +prompt("Сколько фильмов Вы посмотрели?", '');
+    }
+}
+
+start();
 
 const personalMovieDB = {
     count: numberOfFilms,
@@ -13,15 +23,283 @@ const personalMovieDB = {
     privat: false
 };
 
-const a = prompt('Один из последних просмотренных фильмов?', ''),
-      b = prompt('Ваша оценка:', ''),
-      c = prompt('Один из последних просмотренных фильмов?', ''),
-      d = prompt('Ваша оценка:', '');
+function rememberMyFilms() {
+    for (let i = 0; i < 2; i++) {
+        const a = prompt('Один из последних просмотренных фильмов?', ''),
+              b = prompt('Ваша оценка:', '');
+        if (a != '' && b != '' && a.length < 50 && a != null && b != null && !isNaN(b)) {
+            personalMovieDB.movies[a] = b;
+            console.log('done');
+        } else {
+            console.log('error');
+            i--;
+        }
+    }
+}
 
-personalMovieDB.movies[a] = b;
-personalMovieDB.movies[c] = d;
+rememberMyFilms();
 
-console.log(personalMovieDB);
+function detectedPersonalLevel() {
+    if (personalMovieDB.count < 10) {
+        console.log('Просмотрено довольно мало фильмов');
+    } else if (personalMovieDB.count >= 10 && personalMovieDB.count <= 30) {
+        console.log('Вы классический зритель');
+    } else if (personalMovieDB.count > 30) {
+        console.log('Вы киноман');
+    } else {
+        console.log('Произошла ошибка');
+    }
+}
+
+detectedPersonalLevel();
+
+function showMyDB() {
+    if (personalMovieDB.privat == false) {
+        console.log(personalMovieDB);
+    }
+}
+
+showMyDB();
+
+function writeYourGenres() {
+    for (let i = 0; i <= 2; i++) {
+        personalMovieDB.genres[i] = prompt(`Ваш любимый жанр ${i + 1}`);
+    }
+}
+
+writeYourGenres();
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* function rememberMyFilms()   v.2 */
+
+// while (i < 2) {
+//     const a = prompt('Один из последних просмотренных фильмов?', ''),
+//     b = prompt('Ваша оценка:', '');
+//     if (a != '' && b != '' && a.length < 50 && a != null && b != null) {
+//     personalMovieDB.movies[a] = b;
+//     console.log('done');
+//     } else {
+//     console.log('error');
+//     i--;
+//     }
+// }
+
+
+
+// const num = 12.2;
+// console.log(Math.round(num));
+
+// const test = '12.2px';
+// console.log(parseInt(test));
+// console.log(parseFloat(test));
+
+
+// const logg = 'Hello world';
+
+// console.log(logg.toUpperCase());     /* ЗАГЛАВНЫЕ БУКВЫ */
+// console.log(logg.toLowerCase());     /* строчные буквы */
+// console.log(logg.length);            /* длина строки */
+// console.log(logg.indexOf('w'));      /* Проверяет наличие символа в строке */
+// console.log(logg.slice(6, 11));      /* с какого по какой символ */
+// console.log(logg.substring(6, 11));  /* с какого по какой символ */
+// console.log(logg.substr(6, 5));     /* С какого символа и их количество */
+
+
+// function getMathResult(base, count) {
+//     let result = `${base} `;
+//     if (count != 'number' && count <= 0) {   /* Проверка count на положительное число */
+//         return base;
+//     }
+//     for (let i = 2; i <= count; i++) {       /* количество повторений base */
+//     result += ` --- ${base * i}`;            /* формирование строки */
+//     }
+//     return result;
+// }
+
+// console.log(getMathResult(5, 3));     /* 5  --- 10 --- 15 */
+
+// console.log(getMathResult(4, 10));    /* 4  --- 8 --- 12 --- 16 --- 20 --- 24 --- 28 --- 32 --- 36 --- 40 */
+
+// console.log(getMathResult(5, -3));    /* 5 */
+
+
+// const arrNumber = [];
+
+// function arrNumbers(num) {
+//     arrNumber[0] = num - 1;
+//     arrNumber[1] = num;
+//     arrNumber[2] = num + 1;
+//     return arrNumber;
+// }
+// console.log(arrNumbers(5));
+// console.log(arrNumbers(10));
+
+// function sayHello(name) {
+//     return `Hello, ${name}`;
+// }
+// console.log(sayHello('Alex'));
+
+
+// /* Треугольник из звездочек */
+// const lines = 7;
+// let result = '';
+
+// for (let i = 1; i < lines; i++) {
+//     for (let j = 0; j < i; j++) {
+//         result += '*';
+//     }
+//     result += '\n';
+// }
+// console.log(result);
+
+
+// first: for (let i = 0; i < 3; i++) {
+//     console.log(`First level: ${i}`);
+//     second: for (let j = 0; j < 3; j++) {
+//         console.log(`Second level: ${j}`);
+//         for (let k = 0; k < 3; k++) {
+//             if (k === 2) continue first;
+//             // if (k === 1) continue second;
+//             console.log(`Third level: ${k}`);
+//         }
+//     }
+// }
+
+// let num = 5;
+
+// // do {
+// //     console.log(num)
+// //     num++;
+// // }
+// // while (num < 10) {
+// //     console.log(num)
+// // }
+
+// for (let i = num; i <= 10; i++) {
+//     console.log(num)
+//     num++;
+// }
+
+// for (let i = 20; i >= 10; i--) {
+//     if (i == 13) break;
+//     console.log(i)
+// }
+
+
+// for (let i = 2; i <= 10; i++) {
+//     if (i % 2 === 0) {
+//         console.log(i)
+//     }
+// }
+
+// for (let i = 2; i <= 16; i++) {
+//     if (i % 2 === 0) {
+//         continue;
+//     } else {
+//         console.log(i);
+//     }
+// }
+
+// let i = 2;
+// while (i < 16) {
+//     i++;
+//     if (i % 2 === 0) {
+//         continue;
+//     } else {
+//         console.log(i)
+//     }
+// } 
+
+
+// /* Заполняем массив цифрами от 5 до 10 */
+// const arr = [];
+// for (let i = 0; i <= 5; i++) {
+//     arr[i] = i + 5;
+// }
+// console.log(arr);
+
+
+// const arr = [3, 5, 8, 16, 20, 23, 50];
+// const result = [];
+
+// for (let i = 0; i <= arr.length - 1; i++) {
+//     result[i] = arr[i];
+// }
+// console.log(result)
+
+// for (let i = 0; i < arr.length; i++) {
+//     let a = arr [i];
+//     result [i] = a;
+// }
+
+// console.log(result)
+
+// const data = [5, 10, 'Shopping', 20, 'Homework'];
+
+// // for (let i = 0; i <= data.length; i++) {
+// //     if (typeof(data[i]) === 'number') {
+// //         data[i] = data[i] * 2;
+// //     }
+// //     if (typeof(data[i]) === 'string') {
+// //         data[i] = `${data[i]} - done`
+// //     }
+// // }
+// const result = [];
+
+// data.reverse();
+
+// for (let i = 0; i < data.length; i++) {
+//     let a = data[i];
+//     result[i] = a;
+//     // result[i] = data[i];
+// }
+// console.log(result);
+// // console.log(data)
+
+
+// const lines = 5;
+// let result = '';
+
+// for (let i = 0; i <= lines; i++) {
+//     for (let j = lines; j >= i; j--) {
+//         result += ' ';
+//     }
+//     for (let k = 0; k <= i; k++) {
+//         result += '*';
+//         if (k > 0) {
+//             result += '*';
+//         }
+//     }
+//     result += '\n';
+// }
+
+// console.log(result);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
