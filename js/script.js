@@ -25,7 +25,7 @@ const personalMovieDB = {
 
 function rememberMyFilms() {
     for (let i = 0; i < 2; i++) {
-        const a = prompt('Один из последних просмотренных фильмов?', ''),
+        const a = prompt('Один из последних просмотренных фильмов?', '').trim(),
               b = prompt('Ваша оценка:', '');
         if (a != '' && b != '' && a.length < 50 && a != null && b != null && !isNaN(b)) {
             personalMovieDB.movies[a] = b;
@@ -81,6 +81,24 @@ writeYourGenres();
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* function rememberMyFilms()   v.2 */
 
 // while (i < 2) {
@@ -95,6 +113,107 @@ writeYourGenres();
 //     }
 // }
 
+
+
+
+
+
+
+
+
+
+
+
+
+/* 9 Fibonachi */
+
+// function fib(fibLen) {
+//     const fibArr = [0, 1];
+//     if (!Number.isInteger(fibLen) || fibLen < 0) {
+//         return '';
+//     }
+//     if (fibLen < 3) {
+//         return fibArr.slice(0, fibLen).join(' ');
+//     }
+//     while (fibLen != fibArr.length) {
+//         fibArr.push(fibArr[fibArr.length - 2] + fibArr[fibArr.length - 1]);
+//     }
+//     return fibArr.join(' ');
+// }
+
+// console.log(fib(4));
+// console.log(fib(8));
+// console.log(fib(14));
+
+/* 8-2 */
+
+// function findMaxNumber(a, b, c, d) {
+//     if (arguments.length < 4) {
+//         return 0;
+//     }
+//     for (let i = 0; i < arguments.length; i++) {
+//         if (typeof arguments[i] != 'number') {
+//             return 0;
+//         }
+//     }
+//     return Math.max(...arguments);
+// }
+
+// console.log(findMaxNumber(1, 2, 4, 7.8));
+// console.log(findMaxNumber(-1, '2', 4, 7));
+// console.log(findMaxNumber(13, 24, 34, 17));
+// console.log(findMaxNumber(1, 2, 4));
+
+/* 8-1 */
+
+// function getTimeFromMinutes(minutes) {
+//     if (!Number.isInteger(minutes) || minutes < 0 || isNaN(minutes)) {
+//         return 'Ошибка, проверьте данные';
+//     }
+//     let hours = Math.floor(minutes / 60);
+//     let minute = minutes % 60;
+//     if (hours >= 5 || hours == 0) {
+//         return `Это ${hours} часов и ${minute} минут`;
+//     } else if (hours > 1 && hours < 5) {
+//         return `Это ${hours} часа и ${minute} минут`;
+//     } else if (hours == 1) {
+//         return `Это ${hours} час и ${minute} минут`;
+//     }
+// }
+
+// console.log(getTimeFromMinutes(33));
+
+/* 7-2 */
+
+// function getCoupeNumber(numTicket) {
+//     if (numTicket < 0 || !Number.isInteger(numTicket) || numTicket == 'string') {
+//         return `Ошибка. Проверьте правильность введенного номера`;
+//     } else if (numTicket === 0 || numTicket > 36) {
+//         return `Таких мест в вагоне не существует`;
+//     }
+//     return Math.ceil(numTicket / 4);
+// }
+
+// console.log(getCoupeNumber(6));
+
+/* 7-1 */
+
+// let value;
+// let square;
+
+// function calculateVolumeAndArea(lenght) {
+//     value = lenght * lenght * lenght;
+//     square = 6 * (lenght * lenght);
+//     if (!Number.isInteger(lenght) || lenght <= 0 || lenght == 'string') {
+//         return 'При вычислении произошла ошибка';
+//     }
+//     return `Объем куба: ${value}, площадь всей поверхности: ${square}`;
+// }
+
+// console.log(calculateVolumeAndArea(5));
+// console.log(calculateVolumeAndArea(15.9));
+// console.log(calculateVolumeAndArea(-53));
+// console.log(calculateVolumeAndArea('25'));
 
 
 // const num = 12.2;
