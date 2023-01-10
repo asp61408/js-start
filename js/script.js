@@ -1,219 +1,311 @@
 "use strict";
 
-// #2 IvanP 
-
-
-let numberOfFilms;
-
-function start() {
-    numberOfFilms = +prompt("Сколько фильмов Вы посмотрели?", '');
-
-    while(numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
-        numberOfFilms = +prompt("Сколько фильмов Вы посмотрели?", '');
-    }
-}
-
-start();
-
-const personalMovieDB = {
-    count: numberOfFilms,
-    movies: {},
-    actors: {},
-    genres: [],
-    privat: false
-};
-
-function rememberMyFilms() {
-    for (let i = 0; i < 2; i++) {
-        const a = prompt('Один из последних просмотренных фильмов?', '').trim(),
-              b = prompt('Ваша оценка:', '');
-        if (a != '' && b != '' && a.length < 50 && a != null && b != null && !isNaN(b)) {
-            personalMovieDB.movies[a] = b;
-            console.log('done');
-        } else {
-            console.log('error');
-            i--;
-        }
-    }
-}
-
-rememberMyFilms();
-
-function detectedPersonalLevel() {
-    if (personalMovieDB.count < 10) {
-        console.log('Просмотрено довольно мало фильмов');
-    } else if (personalMovieDB.count >= 10 && personalMovieDB.count <= 30) {
-        console.log('Вы классический зритель');
-    } else if (personalMovieDB.count > 30) {
-        console.log('Вы киноман');
-    } else {
-        console.log('Произошла ошибка');
-    }
-}
-
-detectedPersonalLevel();
-
-function showMyDB() {
-    if (personalMovieDB.privat == false) {
-        console.log(personalMovieDB);
-    }
-}
-
-showMyDB();
-
-function writeYourGenres() {
-    for (let i = 0; i <= 2; i++) {
-        personalMovieDB.genres[i] = prompt(`Ваш любимый жанр ${i + 1}`);
-    }
-}
-
-writeYourGenres();
 
 
 
 
 
 
+/* 35 урок. Передача по ссылке или по значению */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* function rememberMyFilms()   v.2 */
-
-// while (i < 2) {
-//     const a = prompt('Один из последних просмотренных фильмов?', ''),
-//     b = prompt('Ваша оценка:', '');
-//     if (a != '' && b != '' && a.length < 50 && a != null && b != null) {
-//     personalMovieDB.movies[a] = b;
-//     console.log('done');
-//     } else {
-//     console.log('error');
-//     i--;
+// const obj = {
+//     a: 2,
+//     b: 4,
+//     c: {
+//         x: 7,
+//         y: 9
 //     }
+// };
+
+// const copyObj = obj;
+
+// copyObj.a = 10;
+// console.log(copyObj);
+// console.log(obj);
+
+
+
+
+/* Поверхностное копирование объекта */
+
+// function copy(mainObj) {
+//     const objCopy = {};
+
+//     for (let key in mainObj) {
+//         objCopy[key] = mainObj[key];
+//     }
+//     return objCopy;
+// }
+
+// const numbers = {
+//     a: 2,
+//     b: 4,
+//     c: {
+//         x: 7,
+//         y: 9
+//     }
+// };
+
+// const copyNumbers = copy(numbers);
+
+// copyNumbers.a = 10;
+// copyNumbers.c.x = 10;               /* Также Изменит значение в numbers */
+
+// console.log(copyNumbers);
+// console.log(numbers);
+
+// const addNumbers = {
+//     d: 9,
+//     e: 5
+// };
+
+// // console.log(Object.assign(numbers, addNumbers));
+// // console.log(Object.assign({}, addNumbers));
+
+// const cloneAddNumbers = Object.assign({}, addNumbers);
+
+// cloneAddNumbers.d = 20;
+
+// console.log(addNumbers);
+// console.log(cloneAddNumbers);
+
+
+
+
+/* Копирование массива */
+
+// const oldArray = ['a', 'b', 'c'];
+// const newArray = oldArray.slice();
+
+// newArray[1] = 'bbbbb';
+
+// console.log(oldArray);
+// console.log(newArray);
+
+
+
+// const video = ['youtube', 'vimeo', 'rutube'],
+//       blogs = ['wordpress', 'livejournal', 'blogger'],
+//       internet = [...video, ...blogs, 'vk', 'facebook'];
+//                                                             /* 
+//                                                             В консоли
+//                                                                 [
+//                                                                 'youtube',
+//                                                                 'vimeo',
+//                                                                 'rutube',
+//                                                                 'wordpress',
+//                                                                 'livejournal',
+//                                                                 'blogger',
+//                                                                 'vk',
+//                                                                 'facebook'
+//                                                                 ]
+
+//                                                             */
+//     // internet = [video, blogs, 'vk', 'facebook'];
+//                                                     /* В консоли 
+//                                                         [
+//                                                             [ 'youtube', 'vimeo', 'rutube' ],
+//                                                             [ 'wordpress', 'livejournal', 'blogger' ],
+//                                                             'vk',
+//                                                             'facebook'
+//                                                         ] 
+//                                                     */
+
+// console.log(internet);
+
+
+// const obj = {
+//     one: 1,
+//     two: 2,
+//     tree: 3
+// };
+
+// const arr = [1, 2, 3];
+// const newO = {...obj};
+
+// console.log(...arr);
+// console.log(obj);
+// console.log(newO);
+
+
+
+
+
+/* Поверхностное Копирование объекта через спред ... */
+
+// const q = {
+//     one: 1,
+//     two: 2
+// };
+// const newQ = {...q};
+
+// newQ.one = 3;
+
+// console.log(newQ);
+// console.log(q);
+
+
+
+
+
+
+
+// /* Урок 33 Массивы и псевдомассивы */
+
+// const arr = [15, 52, 345, 45, 55];
+
+// arr.sort();      
+// console.log(arr.join(', '));                         /* Вывод в консоль [ 15, 345, 45, 52, 55 ] */
+
+// arr.sort((a, b) => a - b);
+// console.log(arr.join('; '));                         /* Вывод в консоль [ 15, 45, 52, 55, 345 ] */
+
+// arr.sort(compareNum);
+// console.log(arr.join(' - '));                         /* Вывод в консоль [ 15, 45, 52, 55, 345 ] */
+
+// function compareNum(a, b) {               /* Функция для метода sort(как в примере выше стрелочная) */
+//     return a - b;
 // }
 
 
 
 
+/* Метод перебора массива forEach */
+
+// arr.forEach((item, i, arr) => console.log(`${i}: ${item} внутри массива ${arr}`));
+
+/* 
+Вывод в консоль:
+0: 1 внутри массива 1,2,3,4,5
+1: 2 внутри массива 1,2,3,4,5
+2: 3 внутри массива 1,2,3,4,5
+3: 4 внутри массива 1,2,3,4,5
+4: 5 внутри массива 1,2,3,4,5
+ */
 
 
 
+// const str = prompt('', '');
+// const products = str.split(', ');    /* Массив из строки, " РАЗДЕЛИТЕЛЬ " */
+// products.sort();                     /* Сортировка */
+// console.log(products);
+// console.log(products.join('; \n'));  /* Строка из массива, в " РАЗДЕЛИТЕЛЬ " */
 
 
 
+// arr.pop();         /* Удаляет последний элемент и возвращает его */
+// arr.push(6);       /* Добавляет элемент в конец массива */
+// arr[0] = 22;       /* Изменение значения в массиве */
+
+
+// arr[99] = 0;       /* Не делать так!!! Ломает логику массива!!! */
 
 
 
-/* 9 Fibonachi */
+/* Перебор массива */
 
-// function fib(fibLen) {
-//     const fibArr = [0, 1];
-//     if (!Number.isInteger(fibLen) || fibLen < 0) {
-//         return '';
-//     }
-//     if (fibLen < 3) {
-//         return fibArr.slice(0, fibLen).join(' ');
-//     }
-//     while (fibLen != fibArr.length) {
-//         fibArr.push(fibArr[fibArr.length - 2] + fibArr[fibArr.length - 1]);
-//     }
-//     return fibArr.join(' ');
+// for (let i = 0; i < arr.length; i++) {
+//     console.log(arr[i]);
 // }
 
-// console.log(fib(4));
-// console.log(fib(8));
-// console.log(fib(14));
 
-/* 8-2 */
 
-// function findMaxNumber(a, b, c, d) {
-//     if (arguments.length < 4) {
-//         return 0;
+/* Перебор массива */
+
+// for (let value of arr) {
+//     console.log(value);
+// }
+// console.log(arr.length);
+// console.log(arr);
+
+
+
+
+// /* 32 Урок Объекты, деструктуризация объектов */
+
+// const options = {
+//     name: 'test',
+//     weight: 1024,
+//     height: 1024,
+//     colors: {
+//         border: 'black',
+//         bg: 'red'
+//     },
+//     makeTest: function() {
+//         console.log('TEST');
 //     }
-//     for (let i = 0; i < arguments.length; i++) {
-//         if (typeof arguments[i] != 'number') {
-//             return 0;
+// };
+
+// options.makeTest();
+
+// const {border, bg} = options.colors;
+
+// console.log(border);
+// console.log(bg);
+
+// console.log(Object.keys(options).length);
+// console.log(Object.keys(options));
+
+
+// console.log(options.name);
+
+// delete options.name;
+
+// console.log(options);
+
+// let counter = 0;
+
+// for (let key in options) {
+//     if (typeof(options[key]) === 'object') {
+//         for (let i in (options[key])) {
+//             console.log(`Свойство: ${i}, значение: ${options[key][i]}`);
+//             // counter++;
 //         }
-//     }
-//     return Math.max(...arguments);
-// }
-
-// console.log(findMaxNumber(1, 2, 4, 7.8));
-// console.log(findMaxNumber(-1, '2', 4, 7));
-// console.log(findMaxNumber(13, 24, 34, 17));
-// console.log(findMaxNumber(1, 2, 4));
-
-/* 8-1 */
-
-// function getTimeFromMinutes(minutes) {
-//     if (!Number.isInteger(minutes) || minutes < 0 || isNaN(minutes)) {
-//         return 'Ошибка, проверьте данные';
-//     }
-//     let hours = Math.floor(minutes / 60);
-//     let minute = minutes % 60;
-//     if (hours >= 5 || hours == 0) {
-//         return `Это ${hours} часов и ${minute} минут`;
-//     } else if (hours > 1 && hours < 5) {
-//         return `Это ${hours} часа и ${minute} минут`;
-//     } else if (hours == 1) {
-//         return `Это ${hours} час и ${minute} минут`;
+//     } else {
+//         console.log(`Свойство: ${key}, значение: ${options[key]}`);
+//         // counter++;
 //     }
 // }
 
-// console.log(getTimeFromMinutes(33));
 
-/* 7-2 */
+/* Подсчет свойств объекта через for in */
 
-// function getCoupeNumber(numTicket) {
-//     if (numTicket < 0 || !Number.isInteger(numTicket) || numTicket == 'string') {
-//         return `Ошибка. Проверьте правильность введенного номера`;
-//     } else if (numTicket === 0 || numTicket > 36) {
-//         return `Таких мест в вагоне не существует`;
-//     }
-//     return Math.ceil(numTicket / 4);
+// for (let key in options) {
+//     counter++;
 // }
 
-// console.log(getCoupeNumber(6));
+// console.log(counter);
 
-/* 7-1 */
 
-// let value;
-// let square;
+/* Сложный метод подсчета свойств в объекте (МОЙ) */
 
-// function calculateVolumeAndArea(lenght) {
-//     value = lenght * lenght * lenght;
-//     square = 6 * (lenght * lenght);
-//     if (!Number.isInteger(lenght) || lenght <= 0 || lenght == 'string') {
-//         return 'При вычислении произошла ошибка';
+// const optKey = [];
+// for (let key in options) {
+//     if (typeof(options[key]) === 'object') {
+//         for (let i in (options[key])) {
+//             optKey.push(options[key][i]);
+//         }
+//     } else {
+//         optKey.push(options[key]);
 //     }
-//     return `Объем куба: ${value}, площадь всей поверхности: ${square}`;
+// }
+// console.log(optKey);
+// console.log(optKey.length);
+
+
+
+
+/* Перебор массива for of */
+
+
+// const arr = [0, 1, 2];
+
+// for (let key of arr) {
+//     console.log(key);
 // }
 
-// console.log(calculateVolumeAndArea(5));
-// console.log(calculateVolumeAndArea(15.9));
-// console.log(calculateVolumeAndArea(-53));
-// console.log(calculateVolumeAndArea('25'));
+
+
 
 
 // const num = 12.2;
@@ -270,17 +362,8 @@ writeYourGenres();
 // console.log(sayHello('Alex'));
 
 
-// /* Треугольник из звездочек */
-// const lines = 7;
-// let result = '';
 
-// for (let i = 1; i < lines; i++) {
-//     for (let j = 0; j < i; j++) {
-//         result += '*';
-//     }
-//     result += '\n';
-// }
-// console.log(result);
+
 
 
 // first: for (let i = 0; i < 3; i++) {
@@ -295,6 +378,8 @@ writeYourGenres();
 //     }
 // }
 
+
+
 // let num = 5;
 
 // // do {
@@ -305,10 +390,14 @@ writeYourGenres();
 // //     console.log(num)
 // // }
 
+
+
 // for (let i = num; i <= 10; i++) {
 //     console.log(num)
 //     num++;
 // }
+
+
 
 // for (let i = 20; i >= 10; i--) {
 //     if (i == 13) break;
@@ -322,6 +411,8 @@ writeYourGenres();
 //     }
 // }
 
+
+
 // for (let i = 2; i <= 16; i++) {
 //     if (i % 2 === 0) {
 //         continue;
@@ -329,6 +420,9 @@ writeYourGenres();
 //         console.log(i);
 //     }
 // }
+
+
+
 
 // let i = 2;
 // while (i < 16) {
@@ -341,12 +435,16 @@ writeYourGenres();
 // } 
 
 
+
+
+
 // /* Заполняем массив цифрами от 5 до 10 */
 // const arr = [];
 // for (let i = 0; i <= 5; i++) {
 //     arr[i] = i + 5;
 // }
 // console.log(arr);
+
 
 
 // const arr = [3, 5, 8, 16, 20, 23, 50];
@@ -363,6 +461,9 @@ writeYourGenres();
 // }
 
 // console.log(result)
+
+
+
 
 // const data = [5, 10, 'Shopping', 20, 'Homework'];
 
@@ -385,35 +486,6 @@ writeYourGenres();
 // }
 // console.log(result);
 // // console.log(data)
-
-
-// const lines = 5;
-// let result = '';
-
-// for (let i = 0; i <= lines; i++) {
-//     for (let j = lines; j >= i; j--) {
-//         result += ' ';
-//     }
-//     for (let k = 0; k <= i; k++) {
-//         result += '*';
-//         if (k > 0) {
-//             result += '*';
-//         }
-//     }
-//     result += '\n';
-// }
-
-// console.log(result);
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -542,78 +614,6 @@ writeYourGenres();
 // }
 
 
-/* 
-let result = '';
-let lenght = 7;
-
-for (let i = 1; i < lenght; i++) {
-    for (let j = 0; j < i; j++) {
-        result += '*';
-    }
-    result += '\n';
-}
-console.log(result); */
-
-
-
-// FizzBuzz
-
-// let num = 0;
-
-// for (let i = 0; i < 100; i++) {
-//     num ++;
-//     if (num % 3 == 0 && num % 5 == 0) {
-//         console.log('FizzBuzz');
-//         continue;
-//     }
-//     if (num % 3 == 0) {
-//         console.log('Fizz');
-//         continue;
-//     }
-//     if (num % 5 == 0) {
-//         console.log('Buzz');
-//         continue;
-//     }
-//     console.log(num);
-// }
-
-
-
-// треугольник
-
-// let result = '';
-// let lenght = 7;
-
-// for (let i = 1; i < lenght; i++) {
-//     for (let j = 0; j < i; j++) {
-//         result += '*';
-//     }
-//     result += '\n';
-// }
-// console.log(result);
-
-
-
-// // шахматная доска
-
-// let results = '';
-// let size = 8;
-
-// for (let i = 1; i < size; i++) {
-
-//     for (let j = 0; j < size / 2; j++ ) {
-//         if (i % 2 != 0) {
-//             results += ' ' + '#';
-//         }
-//         else {
-//             results += '#' + ' ';
-//         }
-//     } 
-//     results += '\n';
-// }
-
-// console.log(results);
-
 
 
 // // пример из книги
@@ -741,13 +741,13 @@ console.log(result); */
 
 
 // function showProgrammingLangs(plan) {
-    //     const programmingLangs = personalPlanPeter.skills.programmingLangs;    /*деструктуриз. programmingLangs{}*/
-    //     const languages = Object.keys(programmingLangs);        /*создаем массив с ключами объекта programmingLangs*/
-    //     // console.log(languages.length);       /* Вывел в консоль длину массива для проверки(для себя) */
-    //     if (languages.length === 0) {        /* проверка на пустой массив */
-    //         return '000';
-    //     }
-    //     let result = '';         /* переменная для строки с результатом */
+//         const programmingLangs = personalPlanPeter.skills.programmingLangs;    /*деструктуриз. programmingLangs{}*/
+//         const languages = Object.keys(programmingLangs);        /*создаем массив с ключами объекта programmingLangs*/
+//         // console.log(languages.length);       /* Вывел в консоль длину массива для проверки(для себя) */
+//         if (languages.length === 0) {        /* проверка на пустой массив */
+//             return '000';
+//         }
+//         let result = '';         /* переменная для строки с результатом */
 //     for (let i = 0; i < languages.length; i++) {         /* перебор массива с 0 до длины */
 //         result += `Язык ${languages[i]} изучен на ${programmingLangs[languages[i]]}\n`;  /*создание строки в result*/
 //     }
