@@ -1,54 +1,198 @@
 'use strict';
 
 
+
+
+
+
+
+
+
+/* 12 tasks (11t part 2) */
+
+// const someString = 'This is some strange string';
+
+// function reverse(str) {
+//     if (typeof str !== 'string') {
+//         return 'Ошибка';
+//     }
+//     const strArr = str.split('').reverse().join('');
+//     return strArr;
+// }
+
+
+
+/* Мое старое решение */
+
+// function reverse(str) {
+//     // return str.split('').reverse().join('');    
+//     if (typeof str !== 'string') {
+//         return 'Ошибка!';
+//     }
+//     let arrStr = str.split('');
+//     let newStr = '';
+//     for (let i = str.length - 1; i >= 0; i--) {
+//         newStr += arrStr[i];
+//     }
+//     return newStr;
+// }
+
+// console.log(reverse(someString));
+
+
+// const baseCurrencies = ['USD', 'EUR', 'RUB'];
+// const additionalCurrencies = ['UAH', 'RUB', 'CNY'];
+
+// function availableCurr(arr, missingCurr) {
+//     let allCurr = '';
+//     // arr.length === 0 ? allCurr = 'Нет доступных валют' : allCurr = 'Доступные валюты:\n';
+//     if (arr.lenght === 0) {  
+//         allCurr = 'Доступных валют нет';
+//     } else {
+//         allCurr = 'Доступные валюты: \n';
+//     }
+//     arr.forEach(function(curr, i) {
+//         if (curr !== missingCurr) {
+//             allCurr += `${curr}\n`;
+//         }
+//     });
+//     for (let i = 0; i < arr.lenght; i++) {
+//         if (arr[i] === missingCurr) {
+//             continue;
+//         }
+//         allCurr += `${arr[i]}\n`;
+//     }
+//     return allCurr;
+// }
+
+// console.log(availableCurr([...baseCurrencies, ...additionalCurrencies], 'CNY'));
+
+
+
+
+
+
+/* Код Ивана (Github) */
+
+
+// function availableCurr(arr, missingCurr) {
+//     let str = '';
+//     arr.length === 0 ? str = 'Нет доступных валют' : str = 'Доступные валюты:\n';
+
+//     arr.forEach(function(curr, i) {
+//         if (curr !== missingCurr) {
+//             str += `${curr}\n`;
+//         }
+//     });
+
+//     // Или
+//     // for (let i = 0; i < arr.length; i++) {
+//     //     if (arr[i] === missingCurr) {
+//     //         continue;
+//     //     }
+//     //     str += `${arr[i]}\n`;
+//     // }
+
+//     return str;
+// }
+
+
+
+
+
+
+/* 11 */
+
+// const family = ['Peter', 'Ann', 'Alex', 'Linda'];
+
+// function showFamily(arr) {
+//     let result = `Семья состоит из: `;
+//     if (arr.length === 0) {
+//         return 'Семья пуста';
+//     }
+//     for (let value of arr) {
+//         result += ` ${value}`; 
+//     }
+//     return result;
+
+// }
+
+// console.log(showFamily(family));
+
+
+// const favoriteCities = ['liSBon', 'ROME', 'miLan', 'Dublin'];
+
+
+// function standardizeStrings(arr) {
+//     let str = arr.join('\n').toLowerCase();
+//     return str;
+// }
+
+// standardizeStrings(favoriteCities);
+
+// console.log(standardizeStrings(favoriteCities));
+
+
+/* Мое Старое решение  */
+
+// let stringArr = '';
+//     for (let i = 0; i < arr.length; i++) {
+//         stringArr += arr[i] + "\n";
+//     }
+//     return stringArr.toLowerCase();
+
+
+
+
+
 /* 10 самостоятельно */
 
-const personalPlanPeter = {
-    name: "Peter",
-    age: "30",
-    skills: {
-        languages: ['ru', 'eng', 'fr'],
-        programmingLangs: {
-            js: '20%',
-            php: '10%',
-            ruby: '30%'
-        },
-        exp: '3 month'
-    },
-    showAgeAndLangs: () => {           /*  showAgeAndLangs() { ..... } тоже работает. ПОЧЕМУ???*/
-        let result = '';
-        const languages = personalPlanPeter.skills;
-        return `Мне ${personalPlanPeter.age} лет и я владею языками ${languages.languages.join().toUpperCase()}`;
-    }
-};
+// const personalPlanPeter = {
+//     name: "Peter",
+//     age: "30",
+//     skills: {
+//         languages: ['ru', 'eng', 'fr'],
+//         programmingLangs: {
+//             js: '20%',
+//             php: '10%',
+//             ruby: '30%'
+//         },
+//         exp: '3 month'
+//     },
+//     showAgeAndLangs: () => {           /*  showAgeAndLangs() { ..... } тоже работает. ПОЧЕМУ???*/
+//         let result = '';
+//         const languages = personalPlanPeter.skills;
+//         return `Мне ${personalPlanPeter.age} лет и я владею языками ${languages.languages.join().toUpperCase()}`;
+//     }
+// };
 
-function showExperience(plan) {
-    return personalPlanPeter.skills.exp;
-}
+// function showExperience(plan) {
+//     return personalPlanPeter.skills.exp;
+// }
 
-showExperience(personalPlanPeter);
+// showExperience(personalPlanPeter);
 
-function showProgrammingLangs(plan) {
-    let result = '';
-    const langProgramming = personalPlanPeter.skills.programmingLangs;
-    const languages = Object.keys(langProgramming);
+// function showProgrammingLangs(plan) {
+//     let result = '';
+//     const langProgramming = personalPlanPeter.skills.programmingLangs;
+//     const languages = Object.keys(langProgramming);
 
-    for (let key in langProgramming) {
-        result += `Язык ${key} изучен на ${langProgramming[key]} \n`;
-    }
-    if (languages.length === 0) {
-        return 'lll';
-    }
-    return result;
-}
+//     for (let key in langProgramming) {
+//         result += `Язык ${key} изучен на ${langProgramming[key]} \n`;
+//     }
+//     if (languages.length === 0) {
+//         return 'lll';
+//     }
+//     return result;
+// }
 
-showProgrammingLangs(personalPlanPeter);
+// showProgrammingLangs(personalPlanPeter);
 
-personalPlanPeter.showAgeAndLangs(personalPlanPeter);
+// personalPlanPeter.showAgeAndLangs(personalPlanPeter);
 
-console.log(showExperience());
-console.log(showProgrammingLangs());
-console.log(personalPlanPeter.showAgeAndLangs());
+// console.log(showExperience());
+// console.log(showProgrammingLangs());
+// console.log(personalPlanPeter.showAgeAndLangs());
 
 
 
@@ -129,6 +273,10 @@ console.log(personalPlanPeter.showAgeAndLangs());
 // console.log(fib(8));
 // console.log(fib(14));
 
+
+
+
+
 /* 8-2 */
 
 // function findMaxNumber(a, b, c, d) {
@@ -147,6 +295,10 @@ console.log(personalPlanPeter.showAgeAndLangs());
 // console.log(findMaxNumber(-1, '2', 4, 7));
 // console.log(findMaxNumber(13, 24, 34, 17));
 // console.log(findMaxNumber(1, 2, 4));
+
+
+
+
 
 /* 8-1 */
 
@@ -167,6 +319,11 @@ console.log(personalPlanPeter.showAgeAndLangs());
 
 // console.log(getTimeFromMinutes(33));
 
+
+
+
+
+
 /* 7-2 */
 
 // function getCoupeNumber(numTicket) {
@@ -179,6 +336,10 @@ console.log(personalPlanPeter.showAgeAndLangs());
 // }
 
 // console.log(getCoupeNumber(6));
+
+
+
+
 
 /* 7-1 */
 
