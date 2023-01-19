@@ -1,6 +1,149 @@
 'use strict';
 
 
+/*
+quu..__
+ $$$b  `---.__
+  "$$b        `--.                          ___.---uuudP
+   `$$b           `.__.------.__     __.---'      $$$$"              .
+     "$b          -'            `-.-'            $$$"              .'|
+       ".                                       d$"             _.'  |
+         `.   /                              ..."             .'     |
+           `./                           ..::-'            _.'       |
+            /                         .:::-'            .-'         .'
+           :                          ::''\          _.'            |
+          .' .-.             .-.           `.      .'               |
+          : /'$$|           .@"$\           `.   .'              _.-'
+         .'|$u$$|          |$$,$$|           |  <            _.-'
+         | `:$$:'          :$$$$$:           `.  `.       .-'
+         :                  `"--'             |    `-.     \
+        :##.       ==             .###.       `.      `.    `\
+        |##:                      :###:        |        >     >
+        |#'     `..'`..'          `###'        x:      /     /
+         \                                   xXX|     /    ./
+          \                                xXXX'|    /   ./
+          /`-.                                  `.  /   /
+         :    `-  ...........,                   | /  .'
+         |         ``:::::::'       .            |<    `.
+         |             ```          |           x| \ `.:``.
+         |                         .'    /'   xXX|  `:`M`M':.
+         |    |                    ;    /:' xXXX'|  -'MMMMM:'
+         `.  .'                   :    /:'       |-'MMMM.-'
+          |  |                   .'   /'        .'MMM.-'
+          `'`'                   :  ,'          |MMM<
+            |                     `'            |tbap\
+             \                                  :MM.-'
+              \                 |              .''
+               \.               `.            /
+                /     .:::::::.. :           /
+               |     .:::::::::::`.         /
+               |   .:::------------\       /
+              /   .''               >::'  /
+              `',:                 :    .'
+                                    
+*/
+
+
+
+
+
+
+
+
+
+
+
+/* 7 */
+
+// let area,
+//     volume;
+
+// function calculateVolumeAndArea(lenght) {
+//     area = lenght * lenght * 6;
+//     volume = lenght * lenght * lenght;
+//     if (!Number.isInteger(lenght) || lenght <= 0 || lenght === 'string') {
+//         return 'При вычислении произошла ошибка';
+//     } else {
+//         return `'Объем куба: ${volume}, площадь всей поверхности: ${area}'`;
+//     }
+// }
+
+// console.log(calculateVolumeAndArea(15));
+// console.log(calculateVolumeAndArea(10));
+// console.log(calculateVolumeAndArea('10'));
+// console.log(calculateVolumeAndArea(-10));
+
+
+// let numTicket;
+
+// function getCoupeNumber(numTicket) {
+    
+//     if (numTicket < 0 || !Number.isInteger(numTicket)) {
+//         return "Ошибка. Проверьте правильность введенного номера места";
+//     } else if (numTicket == 0 || numTicket > 36) {
+//         return  "Таких мест в вагоне не существует";
+//     } else {
+//         let coupe = Math.ceil(numTicket / 4);
+//         return coupe;
+//     }
+// }
+
+// console.log(getCoupeNumber(33));
+// console.log(getCoupeNumber(40));
+// console.log(getCoupeNumber(12));
+// console.log(getCoupeNumber('33'));
+// console.log(getCoupeNumber(-3));
+
+
+
+
+/* 9  Fibonachi */
+
+// function fib(fibLen) {
+//     let fibArr = [0, 1];
+    
+//     if (!Number.isInteger(fibLen) || fibLen < 0) {
+//         return 's';
+//     }
+//     if (fibLen < 3) {
+//         return fibArr.slice(0, fibLen).join(' ');
+//     }
+//     for (let i = 2; i < fibLen; i++) {
+        
+//         fibArr.push(fibArr[fibArr.length - 1] + fibArr[fibArr.length - 2]);
+//     }
+//     return fibArr.join(' ');
+// }
+
+// console.log(fib(2));
+// console.log(fib(4));
+// console.log(fib(4.1));
+// console.log(fib(-4));
+// console.log(fib('4'));
+// console.log(fib(14));
+
+
+// function fib1(fibLen) {
+//     const fibArr = [0, 1];
+//     if (!Number.isInteger(fibLen) || fibLen < 0) {
+//         return 'k';
+//     }
+//     if (fibLen < 3) {
+//         fibArr.slice(0, fibLen).join(' ');
+//     }
+//     while (fibArr.length != fibLen) {
+//         fibArr.push(fibArr[fibArr.length - 1] + fibArr[fibArr.length - 2]);
+//     }
+//     return fibArr.join(' ');
+// }
+
+// console.log(fib1(2));
+// console.log(fib1(4));
+// console.log(fib1(4.1));
+// console.log(fib1(-4));
+// console.log(fib1('4'));
+// console.log(fib1(14));
+
 
 
 

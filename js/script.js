@@ -4,6 +4,51 @@
 
 
 
+// let obj = {
+//     name: 'John',
+//     width: 1024,
+//     height: 2048,
+//     colors: {
+//         border: 'black',
+//         bg: 'red',
+//     },
+//     makeTest: function() {
+//         console.log('Test');
+//     }
+// };
+
+// obj.makeTest();
+
+// console.log(Object.keys(obj).length);
+
+
+
+
+// let result = 0;
+
+// for (let key in obj) {
+//     if (typeof(obj[key]) === 'object') {
+//         for (let i in obj[key]) {
+//             console.log(`Свойство ${i} имеет значение ${obj[key][i]}`);
+//             result++;
+//         }
+//     } else {
+//         console.log(`Свойство ${key} имеет значение ${obj[key]}`);
+//         result++;
+//     }
+// }
+
+// let counter = 0;
+
+// for (let key in obj) {
+//     counter++;
+// }
+
+// console.log(result);
+// console.log(counter);
+
+
+
 
 
 /* 35 урок. Передача по ссылке или по значению */
