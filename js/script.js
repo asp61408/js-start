@@ -4,6 +4,106 @@
 
 
 
+/* Array Массивы, Псевдомассивы. Методы массивов */
+
+
+
+// const arr = [111, 12, 33, 24];
+
+/* Сортировка массива с числами */
+
+
+
+/* Сортировка массива, как у Ивана, только со стрелочной функцией */
+
+// arr.sort((a, b) => {
+//     return a - b;
+// });
+
+// console.log(arr);
+
+
+/* Сортировка массива с числами от Ивана */
+
+// arr.sort(compareNum);
+
+// function compareNum(a, b) {
+//     return a - b;
+// }
+
+
+
+// arr.sort((a, b) => {
+//     if (a > b) {
+//         return 1;
+//     } else if (a == b) {
+//         return 0;
+//     } else {
+//         return -1;
+//     }
+// });
+
+// console.log(arr);
+
+// arr.forEach((item, i, arr) => {                          /* Принимает до 3-х аргументов */
+//     console.log(`${i}: ${item} внутри массива ${arr}`);
+// });
+
+/* =>
+0: 1 внутри массива 1,2,3,4
+1: 2 внутри массива 1,2,3,4
+2: 3 внутри массива 1,2,3,4
+3: 4 внутри массива 1,2,3,4
+*/
+
+
+
+// arr.forEach((value) => console.log(value));
+
+/* =>
+1
+2
+3
+4
+*/
+
+// for (let value of arr) {
+//     console.log(value);
+// }
+
+/* =>
+1
+2
+3
+4
+*/
+
+
+// for (let i = 0; i < arr.length; i++) {
+//     console.log(arr[i]);
+// }
+
+/* =>
+1
+2
+3
+4
+*/
+
+// arr.push(10);       /* added end */
+// arr.pop();          /* remove end */
+// arr.shift();        /* remove begin */
+// arr.unshift(10);    /* added begin */
+
+
+// const str = prompt('', '');          /* Вводится строка через разделитель из .split */
+// const products = str.split(', ');    /* Массив из строки */
+// products.sort();                     /* Сортировка массива */
+// console.log(products.join('; '));    /* Из массива в строку через заданный разделитель */
+
+
+
+
 // let obj = {
 //     name: 'John',
 //     width: 1024,
