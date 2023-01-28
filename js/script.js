@@ -3,6 +3,114 @@
 
 
 
+/* 35 Передача по ссылке или по значению. Спред оператор */
+
+// const obj = {
+//     a: 5,
+//     b: 1
+// };
+
+// const objCopy = copy(obj);
+
+// objCopy.a = 10;
+
+// console.log(obj);
+// console.log(objCopy);
+
+
+// function copy(mainObj) {              /* Поверхностное копирование объекта */
+//     let copyObj = {};
+
+//     let key;
+//     for (key in mainObj) {
+//         copyObj[key] = mainObj[key];
+//     }
+
+//     return copyObj;
+// }
+
+// const numbers = {
+//     a: 2,
+//     b: 4,
+//     c: {
+//         x: 4,
+//         y: 7
+//     }
+// };
+
+// const newNumbers = copy(numbers);
+
+// newNumbers.a = 10;
+// // newNumbers.c.x = 10;                 /* Поверхностная копия Меняет значения во вложенном объекте! */
+
+// // console.log(newNumbers);
+// // console.log(numbers);
+
+// const add = {
+//     d: 70,
+//     e: 80
+// };
+
+// console.log(Object.assign(numbers, add));      /* { a: 2, b: 4, c: { x: 4, y: 7 }, d: 70, e: 80 } */
+
+// const clone = Object.assign({}, add);
+
+// clone.d = 10;
+
+// console.log(clone);               /* { d: 10, e: 80 } */
+// console.log(add);                 /* { d: 70, e: 80 } */
+
+
+
+// const oldArray = [1, 2, 3];
+// const newArray = oldArray.slice();     /* Created copy of Array */
+
+// newArray[1] = 'fjfjffj';               /* Changed only newArray */
+
+// console.log(newArray);                 /* [ 1, 'fjfjffj', 3 ] */
+// console.log(oldArray);                 /* [ 1, 2, 3 ] */
+
+
+
+// const video = ['youtube', 'vimeo', 'rutube'],
+//       blogs = ['wordpress', 'livejournal', 'blogger'],
+//       internet = [...blogs, ...video, 'facebook', 'vk'];
+
+
+// console.log(internet);
+// console.log(internet.join(', '));
+
+
+// function log(a, b, c) {
+//     console.log(a);
+//     console.log(b);
+//     console.log(c);
+// }
+
+// const num = [2, 5, 7];
+
+// log(...num);              /* ... оператор разворота spread разложит массив */
+
+
+
+
+// const array = ['a', 'b'];
+
+// const newArray = [...array];     /* Spread оператор работает как slice и создает копию массива */
+
+
+
+// const obj = {
+    // one: 1,
+    // two: 2
+// };
+
+// const newObj = {...obj};     /* ... Spread оператор создает копию объекта */
+
+
+
+
+
 
 /* Array Массивы, Псевдомассивы. Методы массивов */
 

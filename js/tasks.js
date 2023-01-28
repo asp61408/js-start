@@ -49,6 +49,37 @@ quu..__
 
 
 
+/* 12 task */
+
+
+/* Разворот строки с помощью метода */
+
+// const someString = 'This is some strange string';
+
+// const reverseString = someString.split('').reverse().join('');
+
+// console.log(reverseString);
+
+
+
+/* Разворот строки с циклом */
+
+// const someString = 'This is some strange string';
+
+// function reverse(str) {
+//   let newStr = '';
+//   for (let i = str.length - 1; i >= 0; i--) {
+//     newStr += str[i];
+//   }
+//   // console.log(newStr);
+//   return newStr;
+// }
+
+// // reverse(someString);
+
+// console.log(reverse(someString));
+
+
 
 
 
