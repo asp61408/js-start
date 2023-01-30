@@ -3,62 +3,116 @@
 
 /* 7 kyu  7 kyu  7 kyu  7 kyu  7 kyu  7 kyu */
 
-const arr = [1, 2, 3, 4, 5, -1, -2, -3];
-const arr1 = [1, 2, 3, 4, 0, -1, -2, -3];
-const arr2 = [];
 
-function countPositivesSumNegatives(input) {
-    let positive;
-    let negative;
-    let newArr = [];
 
-    for (let value of input) {
-        if (input.lengthzl === 0 || value === null) {
-            return newArr;
-        } else if (value < 0) {
-            negative += value;
-        } else {
-            for (let i = 0; i <= input.length; i++) {
-                let arrPos = [];
-                arrPos.push(i);
-                positive = arrPos.length;
 
-            }
-        }
-        newArr = [positive, negative];
-    }
-    return newArr;
-    
-    // let positive;
-    // let negative;
-    // let newArr = [];
-    // if (input.length == 0) {
-    //     return newArr;
-    // }
-    // let arrWithNum = input.forEach(number => {
-    // for (let i = 0; i < input.length; i++) {
-    //     if (number > 0) {
-    //         positive = input.length;
-    //     } else if (number < 0) {
-    //         negative += number;
-    //     }
-    // }
-    // return arrWithNum += [positive, negative];
-    // });
 
-    // let arrNeg = input.forEach(number => number < 0);
 
-    // for (let value of arrNeg) {
-    //     negative += value;
-    // }
-    // if (input.length == 0) {
-    //     return newArr;
-    // }
+
+/* Codewars */
+
+
+/* 
+
+function DNAStrand(dna) {
+  return dna.split('').map(function(v) {return {A:'T', T:'A', C:'G', G:'C'}[v];}).join('');
 }
 
-console.log(countPositivesSumNegatives(arr));
-console.log(countPositivesSumNegatives(arr1));
-console.log(countPositivesSumNegatives(arr2));
+*/
+
+
+
+/* Codewars */
+
+
+/* 
+
+let pairs = {A:'T',T:'A',C:'G',G:'C'};
+const DNAStrand = dna => dna.replace(/./g, c => pairs[c]);
+
+*/
+
+
+/* Codewars */
+
+/* 
+
+function DNAStrand(dna) {
+  return dna.replace(/./g, function(c) {
+    return DNAStrand.pairs[c]
+  })
+}
+
+DNAStrand.pairs = {
+  A: 'T',
+  T: 'A',
+  C: 'G',
+  G: 'C',
+}
+
+*/
+
+// let str11 = "ATTGC",                                      /* --> "TAACG" */
+//     str = "AAAA",
+//     newStr = '';                                       /* --> "CATA" */
+
+// for (let i = 0; i < str.length; i++) {
+//     if (str[i] == 'A') {
+//         newStr += 'T';
+//     } else if (str[i] == 'T') {
+//         newStr += 'A';
+//     } else if (str[i] == 'C') {
+//         newStr += 'G';
+//     } else if (str[i] == 'G') {
+//         newStr += 'C';
+//     }
+// }
+
+// console.log(newStr);
+
+
+
+
+// const arr = [1, 2, 3, 4, 5, -1, -2, -4];
+// const arr1 = [1, 2, 3, 4, 0, -1, -2, -3];
+// const arr2 = [];
+
+// function countPositivesSumNegatives(input) {
+
+
+//     /* Решение с Codewars */
+//     // return input && input.length ? [input.filter(p => p > 0).length, input.filter(n => n < 0)
+// .reduce((a, b) => a + b, 0)] : [];
+
+    /* Codewars */
+
+    // if (!Array.isArray(input) || !input.length) return [];
+    // return input.reduce((arr, n) => {
+    // if (n > 0) arr[0]++;
+    // if (n < 0) arr[1] += n;
+    // return arr;
+    // }, [0, 0]);
+
+
+//     /* Решение chatGPT */
+//     if (!input || input.length == 0) {
+//         return [];
+//     }
+//     let positiveCount = 0;
+//     let negativeSum = 0;
+//     for (let i = 0; i < input.length; i++) {
+//         if (input[i] > 0) {
+//             positiveCount++;
+//         } else if (input[i] < 0) {
+//             negativeSum += input[i];
+//         }
+//     }
+//     return [positiveCount, negativeSum];
+// }
+
+// console.log(countPositivesSumNegatives(arr));
+// console.log(countPositivesSumNegatives(arr1));
+// console.log(countPositivesSumNegatives(arr2));
 
 
 // function getMiddles(str) {
