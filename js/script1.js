@@ -2,6 +2,8 @@
 
 
 
+
+
 const personalMovieDB = {
     count: 0,
     movies: {},
@@ -57,10 +59,9 @@ const personalMovieDB = {
            while (personalMovieDB.genres[i] == '' || personalMovieDB.genres[i] == null) {
                 personalMovieDB.genres[i] = prompt(`Ваш любимый жанр под номером ${i + 1}:`);
            }
-        //    console.log(`Любимый жанр #${i + 1} - это ${personalMovieDB.genres[i]}`);
         }
-        personalMovieDB.genres.forEach(elem => {
-            console.log(`Любимый жанр #${n += 1} - это ${elem}`);
+        personalMovieDB.genres.forEach((elem, i) => {
+            console.log(`Любимый жанр #${i + 1} - это ${elem}`);
         });
     } 
 };

@@ -49,6 +49,106 @@ quu..__
 
 
 
+
+
+/* 14 task */
+
+
+// // const students = ['Peter', 'Andrew', 'Ann', 'Mark', 'Josh', 'Sandra', 'Cris', 'Bernard', 'Takesi', 'Sam'];
+// const students = ['Peter', 'Andrew', 'Ann', 'Mark', 'Josh', 'Sandra', 'Cris', 'Bernard', 'Takesi', 'Sam', 'Zlatan'];
+// // const students = ['Peter', 'Andrew', 'Ann', 'Mark', 'Josh', 'Sandra', 'Cris', 'Bernard', 'Takesi'];
+
+// function sortStudentsByGroups(arr) {
+//   let strName = 'Оставшиеся студенты:';
+//   arr.sort();
+//   let studGroup = [];
+//   let nameArr = [];
+//   for (let i = 0; i < 3; i++) {
+//       studGroup.push(arr.slice(0, 3));
+//       for (let i = 0; i < 3; i++) {
+//         arr.shift();
+//       }
+//   }
+//   console.log(arr);
+//   if (arr.length === 0) {
+//     strName += ' -';
+//   } else if (arr.length == 1) {
+//     strName += ` ${arr.pop()}`;
+//   } else {
+//     strName += ` ${arr.slice(-2, -1)}, ${arr.pop()}`;
+//   }
+//   studGroup.push(strName);
+//   return studGroup;
+// }
+
+// console.log(sortStudentsByGroups(students));
+
+
+
+
+/* 13 task */
+
+
+// const shoppingMallData = {
+//   shops: [
+//       {
+//           width: 10,
+//           length: 5
+//       },
+//       {
+//           width: 15,
+//           length: 7
+//       },
+//       {
+//           width: 20,
+//           length: 5
+//       },
+//       {
+//           width: 8,
+//           length: 10
+//       }
+//   ],
+//   height: 5,
+//   moneyPer1m3: 30,
+//   budget: 50000
+// };
+
+
+// // /* chatGPT */
+
+// // /* 
+// // const calculateArea = (data) => {
+// //      let totalArea = 0;
+// //      data.shops.forEach(shop => {
+// //          totalArea += shop.width * shop.length; 
+// //      }); 
+// //      return totalArea; 
+// // }
+// // */
+
+
+// function isBudgetEnough(data) {
+//   let totalArea = 0;
+  
+//   // data.shops.forEach(shop => {                      /* forEach */
+//     //   totalArea += shop.width * shop.length;
+//     // });
+    
+//   for (let i = 0; i < data.shops.length; i++) {     /* for */
+//     let shop = data.shops[i];
+//     totalArea += shop.width * shop.length;
+//   }
+//   let result = totalArea * shoppingMallData.height * shoppingMallData.moneyPer1m3;
+//   console.log(totalArea);
+//   console.log(result);
+//   return shoppingMallData.budget >= result ? 'Бюджета достаточно' : 'Бюджета недостаточно';
+// }
+
+
+// console.log(isBudgetEnough(shoppingMallData));
+
+
+
 /* 12 task */
 
 
