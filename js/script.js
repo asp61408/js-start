@@ -1,9 +1,168 @@
 "use strict";
 
 
+/* 40 */
 
 
-/* 35 Передача по ссылке или по значению. Спред оператор */
+
+
+
+
+/* 39  ?  37 */
+
+// let num = 5;
+
+// function logNum() {
+//     // let num = 4; debugger
+//     console.log(num);
+// }
+
+// num = 6;
+
+// logNum();
+
+// num = 8;
+
+// logNum();
+
+// // debugger
+// function createCounter() {
+//     let counter = 0; debugger
+
+//     const myFunction = () => counter += 1; debugger
+//     return myFunction; debugger
+// } debugger
+
+// let increment = createCounter(); debugger
+
+// const c1 = increment(); debugger
+// const c2 = increment(); debugger
+// const c3 = increment(); debugger
+
+// console.log(c1, c2, c3);
+
+
+
+// let c = 4; debugger
+// const addX = x => n => n + x; debugger
+// const addThree = addX(3); debugger
+// let d = addThree(c); debugger
+// console.log('example partial application', d);
+
+
+// let c = 4; debugger
+// function addX(x) { debugger
+//   return function(n) { debugger
+//      return n + x; debugger
+//   }
+// } debugger
+// const addThree = addX(3); debugger
+// let d = addThree(c); debugger
+// console.log('example partial application', d);
+
+
+
+// function makeWorker() {
+//     let name = "Pete";
+  
+//     return function() {
+//       alert(name);
+//     };
+//   }
+  
+//   let name = "John";
+  
+//   // create a function
+//   let work = makeWorker();
+  
+//   // call it
+//   work();   /*  !!!! Pete !!!! */ 
+
+
+// let name = "John";
+
+// function sayHi() {
+//   alert("Hi, " + name);
+// }
+
+// name = "Pete";
+
+// sayHi();
+
+
+
+// const val = 7;
+
+// function createAdded() { debugger
+//     function addedNumber(a, b) { debugger
+//         let ret = a + b; debugger
+//         return ret; debugger
+//     }
+//     return addedNumber; debugger
+// } debugger
+
+// const added = createAdded(); debugger
+
+// const sum = added(val, 8); debugger
+
+// console.log(sum);
+
+
+/* 38 Динамическая типизация */
+
+// To String
+
+// 1)
+// console.log(typeof(String(null)));
+// console.log(typeof(String(4)));
+
+// 2)
+// console.log(typeof(5 + 'px'));
+
+// const num = 5;
+// console.log('https://vk.com/catalog/' + num);
+
+
+// To Number
+
+// 1)
+// console.log(typeof(Number('5')));
+
+// 2)
+// console.log(typeof(+'5'));
+
+// 3)
+// console.log(typeof(parseInt('5px', 10)));
+
+
+// To Boolean
+
+// // 0, '', null, undefined, NaN;
+
+// // 1)
+// let switcher = null;
+
+// if (switcher) {
+//     console.log('working...');
+// }
+
+// switcher = 1;
+
+// if (switcher) {
+//     console.log('working...');
+// }
+
+// // 2)
+// console.log(typeof(Boolean('4')));
+
+// // 3)
+// console.log(typeof(!!'4'));
+
+
+
+
+
+/* 34 Передача по ссылке или по значению. Спред оператор */
 
 // const obj = {
 //     a: 5,
@@ -112,7 +271,150 @@
 
 
 
-/* Array Массивы, Псевдомассивы. Методы массивов */
+/* 34 урок. Передача по ссылке или по значению */
+
+// const obj = {
+//     a: 2,
+//     b: 4,
+//     c: {
+//         x: 7,
+//         y: 9
+//     }
+// };
+
+// const copyObj = obj;
+
+// copyObj.a = 10;
+// console.log(copyObj);
+// console.log(obj);
+
+
+
+
+/* Поверхностное копирование объекта */
+
+// function copy(mainObj) {
+//     const objCopy = {};
+
+//     for (let key in mainObj) {
+//         objCopy[key] = mainObj[key];
+//     }
+//     return objCopy;
+// }
+
+// const numbers = {
+//     a: 2,
+//     b: 4,
+//     c: {
+//         x: 7,
+//         y: 9
+//     }
+// };
+
+// const copyNumbers = copy(numbers);
+
+// copyNumbers.a = 10;
+// copyNumbers.c.x = 10;               /* Также Изменит значение в numbers */
+
+// console.log(copyNumbers);
+// console.log(numbers);
+
+// const addNumbers = {
+//     d: 9,
+//     e: 5
+// };
+
+// // console.log(Object.assign(numbers, addNumbers));
+// // console.log(Object.assign({}, addNumbers));
+
+// const cloneAddNumbers = Object.assign({}, addNumbers);
+
+// cloneAddNumbers.d = 20;
+
+// console.log(addNumbers);
+// console.log(cloneAddNumbers);
+
+
+
+
+/* Копирование массива */
+
+// const oldArray = ['a', 'b', 'c'];
+// const newArray = oldArray.slice();
+
+// newArray[1] = 'bbbbb';
+
+// console.log(oldArray);
+// console.log(newArray);
+
+
+
+// const video = ['youtube', 'vimeo', 'rutube'],
+//       blogs = ['wordpress', 'livejournal', 'blogger'],
+//       internet = [...video, ...blogs, 'vk', 'facebook'];
+//                                                             /* 
+//                                                             В консоли
+//                                                                 [
+//                                                                 'youtube',
+//                                                                 'vimeo',
+//                                                                 'rutube',
+//                                                                 'wordpress',
+//                                                                 'livejournal',
+//                                                                 'blogger',
+//                                                                 'vk',
+//                                                                 'facebook'
+//                                                                 ]
+
+//                                                             */
+//     // internet = [video, blogs, 'vk', 'facebook'];
+//                                                     /* В консоли 
+//                                                         [
+//                                                             [ 'youtube', 'vimeo', 'rutube' ],
+//                                                             [ 'wordpress', 'livejournal', 'blogger' ],
+//                                                             'vk',
+//                                                             'facebook'
+//                                                         ] 
+//                                                     */
+
+// console.log(internet);
+
+
+// const obj = {
+//     one: 1,
+//     two: 2,
+//     tree: 3
+// };
+
+// const arr = [1, 2, 3];
+// const newO = {...obj};
+
+// console.log(...arr);
+// console.log(obj);
+// console.log(newO);
+
+
+
+
+
+/* Поверхностное Копирование объекта через спред ... */
+
+// const q = {
+//     one: 1,
+//     two: 2
+// };
+// const newQ = {...q};
+
+// newQ.one = 3;
+
+// console.log(newQ);
+// console.log(q);
+
+
+
+
+
+
+/* 32 Array Массивы, Псевдомассивы. Методы массивов */
 
 
 
@@ -259,151 +561,7 @@
 
 
 
-/* 35 урок. Передача по ссылке или по значению */
-
-// const obj = {
-//     a: 2,
-//     b: 4,
-//     c: {
-//         x: 7,
-//         y: 9
-//     }
-// };
-
-// const copyObj = obj;
-
-// copyObj.a = 10;
-// console.log(copyObj);
-// console.log(obj);
-
-
-
-
-/* Поверхностное копирование объекта */
-
-// function copy(mainObj) {
-//     const objCopy = {};
-
-//     for (let key in mainObj) {
-//         objCopy[key] = mainObj[key];
-//     }
-//     return objCopy;
-// }
-
-// const numbers = {
-//     a: 2,
-//     b: 4,
-//     c: {
-//         x: 7,
-//         y: 9
-//     }
-// };
-
-// const copyNumbers = copy(numbers);
-
-// copyNumbers.a = 10;
-// copyNumbers.c.x = 10;               /* Также Изменит значение в numbers */
-
-// console.log(copyNumbers);
-// console.log(numbers);
-
-// const addNumbers = {
-//     d: 9,
-//     e: 5
-// };
-
-// // console.log(Object.assign(numbers, addNumbers));
-// // console.log(Object.assign({}, addNumbers));
-
-// const cloneAddNumbers = Object.assign({}, addNumbers);
-
-// cloneAddNumbers.d = 20;
-
-// console.log(addNumbers);
-// console.log(cloneAddNumbers);
-
-
-
-
-/* Копирование массива */
-
-// const oldArray = ['a', 'b', 'c'];
-// const newArray = oldArray.slice();
-
-// newArray[1] = 'bbbbb';
-
-// console.log(oldArray);
-// console.log(newArray);
-
-
-
-// const video = ['youtube', 'vimeo', 'rutube'],
-//       blogs = ['wordpress', 'livejournal', 'blogger'],
-//       internet = [...video, ...blogs, 'vk', 'facebook'];
-//                                                             /* 
-//                                                             В консоли
-//                                                                 [
-//                                                                 'youtube',
-//                                                                 'vimeo',
-//                                                                 'rutube',
-//                                                                 'wordpress',
-//                                                                 'livejournal',
-//                                                                 'blogger',
-//                                                                 'vk',
-//                                                                 'facebook'
-//                                                                 ]
-
-//                                                             */
-//     // internet = [video, blogs, 'vk', 'facebook'];
-//                                                     /* В консоли 
-//                                                         [
-//                                                             [ 'youtube', 'vimeo', 'rutube' ],
-//                                                             [ 'wordpress', 'livejournal', 'blogger' ],
-//                                                             'vk',
-//                                                             'facebook'
-//                                                         ] 
-//                                                     */
-
-// console.log(internet);
-
-
-// const obj = {
-//     one: 1,
-//     two: 2,
-//     tree: 3
-// };
-
-// const arr = [1, 2, 3];
-// const newO = {...obj};
-
-// console.log(...arr);
-// console.log(obj);
-// console.log(newO);
-
-
-
-
-
-/* Поверхностное Копирование объекта через спред ... */
-
-// const q = {
-//     one: 1,
-//     two: 2
-// };
-// const newQ = {...q};
-
-// newQ.one = 3;
-
-// console.log(newQ);
-// console.log(q);
-
-
-
-
-
-
-
-// /* Урок 33 Массивы и псевдомассивы */
+// /* Урок 32 Массивы и псевдомассивы */
 
 // const arr = [15, 52, 345, 45, 55];
 
@@ -474,7 +632,10 @@
 
 
 
-// /* 32 Урок Объекты, деструктуризация объектов */
+
+
+
+// /* 31   Урок Объекты, деструктуризация объектов */
 
 // const options = {
 //     name: 'test',
@@ -521,6 +682,8 @@
 // }
 
 
+
+
 /* Подсчет свойств объекта через for in */
 
 // for (let key in options) {
@@ -528,6 +691,45 @@
 // }
 
 // console.log(counter);
+
+
+
+
+
+
+/* Счетчик свойств в объекте методом .keys() */
+
+// const obj = {
+//     name: 'aaa',
+//     age: 25,
+//     game: 'normal',
+//     married: false
+// };
+
+// console.log(Object.keys(obj).length);
+
+
+
+/* Счетчик свойств в объекте (МОЙ) */
+
+
+// const obj = {
+//     name: 'aaa',
+//     age: 25,
+//     game: 'normal',
+//     married: false
+// };
+
+// let count = 0;
+
+// for (let key in obj) {
+//     if (key) {
+//         count++;
+//     }
+// }
+
+// console.log(count);
+
 
 
 /* Сложный метод подсчета свойств в объекте (МОЙ) */
@@ -544,6 +746,7 @@
 // }
 // console.log(optKey);
 // console.log(optKey.length);
+
 
 
 

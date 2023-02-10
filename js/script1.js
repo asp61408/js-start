@@ -3,7 +3,7 @@
 
 
 
-
+/* 
 const personalMovieDB = {
     count: 0,
     movies: {},
@@ -71,7 +71,7 @@ personalMovieDB.rememberMyFilms();
 personalMovieDB.detectedPersonalLevel();
 personalMovieDB.writeYourGenres();
 personalMovieDB.showMyDB();
-personalMovieDB.toggleVisibleMyDB();
+personalMovieDB.toggleVisibleMyDB(); */
 
 
 
