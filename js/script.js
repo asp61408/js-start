@@ -108,9 +108,17 @@
 // console.log(sum);
 
 
+
+
+
+
+
 /* 38 Динамическая типизация */
 
+
+
 // To String
+
 
 // 1)
 // console.log(typeof(String(null)));
@@ -123,7 +131,10 @@
 // console.log('https://vk.com/catalog/' + num);
 
 
+
+
 // To Number
+
 
 // 1)
 // console.log(typeof(Number('5')));
@@ -135,7 +146,10 @@
 // console.log(typeof(parseInt('5px', 10)));
 
 
+
+
 // To Boolean
+
 
 // // 0, '', null, undefined, NaN;
 
@@ -162,7 +176,24 @@
 
 
 
-/* 34 Передача по ссылке или по значению. Спред оператор */
+/* 35 Передача по ссылке или по значению. Спред оператор */
+
+
+
+
+
+// var o1 = { a: 1 };
+// var o2 = { b: 2 };
+// var o3 = { c: 3 };
+
+// var obj = Object.assign({}, o1, o2, o3); /* .assign(o1, o2, o3) то o1 будет { a: 1, b: 2, c: 3 } */
+// console.log(obj); // { a: 1, b: 2, c: 3 }
+// console.log(o1);  /* { a: 1 } */
+// console.log(o2); 
+// console.log(o3); 
+
+
+
 
 // const obj = {
 //     a: 5,
@@ -271,7 +302,7 @@
 
 
 
-/* 34 урок. Передача по ссылке или по значению */
+/* 35 урок. Передача по ссылке или по значению */
 
 // const obj = {
 //     a: 2,
@@ -631,7 +662,33 @@
 
 
 
+/* Перебор массива */
 
+// const arr = [1, 2, 3, 4];
+
+// arr.filter((item) => {
+//     if (item % 2 === 0) {
+//         console.log(item);
+//     }
+// })
+
+
+
+
+/* .sort Перебор и сортировка массива */
+
+// const arr = [311, 2222];
+
+// arr.sort((a, b) => a - b);      /* Без функции вывод   [ 2222, 311 ] */
+
+// console.log(arr);               /* [ 311, 2222 ] */
+
+
+
+
+
+
+// console.log(arr);
 
 
 
@@ -691,8 +748,6 @@
 // }
 
 // console.log(counter);
-
-
 
 
 
