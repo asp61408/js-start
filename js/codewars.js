@@ -4,10 +4,40 @@
 /* 7 kyu  7 kyu  7 kyu  7 kyu  7 kyu  7 kyu */
 
 
+function getCount(str) {
+  let sum = 0;
+  // for (let i = 0; i < str.length - 1; i++) {
+  //   if (i == 'a' || i == 'e' || i == 'o' || i == 'u' || i == 'i') {
+  //     sum += 1;
+  //   } 
+  // }
+  // return sum;
+
+  str.indexOf('a', 'e');
+
+  // str.split('').forEach((elem) => {
+  //   if (elem == 'a' || elem == 'e' || elem == 'o' || elem == 'i' || elem == 'u') {
+  //     sum += 1;
+  //   }
+  //   return sum;
+  // })
+  // return sum;
+}
+
+console.log(getCount('sjjdlhhffgaaaa aaaa fdkdii'))
 
 
+// function findAverage(array) {
+//   let sum = 0;
+//   if (array.length == 0) return 0;
+//   for (let value of array) {
+//     sum += value;
+//   }
+//   let result = sum / array.length / 2;
+//   return result;
+// }
 
-
+// console.log(findAverage([1, 2, 5, 7]));
 
 /* Codewars */
 
