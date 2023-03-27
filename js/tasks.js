@@ -48,6 +48,7 @@ quu..__
 /* Упражнение 16 */
 
 
+
 // function factorial(n) {
 //   if (!Number.isInteger(n) || isNaN(n)) {
 //     return 'Введите целое число';
