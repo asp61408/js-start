@@ -102,18 +102,6 @@ showMyDB(personalMovieDB.privat);
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 /* #2 IvanP */ 
 
 

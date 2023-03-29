@@ -1,13 +1,292 @@
 "use strict";
 
 
-/* 44 */
+/* 50 */
 
 
 
 
 
 
+
+
+/* 49 Mobile */
+
+
+// touchstart
+// touchmove
+// touchend
+// touchenter
+// touchleave
+// touchcancel
+
+// touches
+// targetTouches
+// changedTouches
+
+
+
+// window.addEventListener('DOMContentLoaded', () => {
+// 	const box = document.querySelector('.box');
+
+// 	box.addEventListener('touchstart', (e) => {
+// 		e.preventDefault();
+
+// 		console.log(e.targetTouches);
+// 		console.log('Start');
+// 	});
+	
+// 	box.addEventListener('touchmove', (e) => {
+// 		e.preventDefault();
+		
+// 		console.log(e.targetTouches[0].pageX);
+// 		console.log('Move');
+// 	});
+
+// 	box.addEventListener('touchend', (e) => {
+// 		e.preventDefault();
+
+// 		console.log('End');
+// 	});
+// });
+
+
+
+
+
+/* 45, 48 */
+
+// document.addEventListener('DOMContentLoaded', () => {
+// 	const movieDB = {
+// 		movies: [
+// 			'Логан',
+// 			'Лига справедливости',
+// 			'Ла-ла лэнд',
+// 			'Одержимость',
+// 			'Скотт Пилигрим против...'
+// 		]
+// 	};
+
+// 	const adv = document.querySelectorAll('.promo__adv img'),
+// 		poster = document.querySelector('.promo__bg'),
+// 		genre = poster.querySelector('.promo__genre'),
+// 		movieList = document.querySelector('.promo__interactive-list'),
+// 		addForm = document.querySelector('form.add'),
+// 		addInput = addForm.querySelector('.adding__input'),
+// 		checkbox = addForm.querySelector('[type="checkbox"]');
+
+
+// 	addForm.addEventListener('submit', (event) => {
+// 		event.preventDefault();
+
+// 		let newFilm = addInput.value;
+// 		const favorite = checkbox.checked;
+		
+// 		if (newFilm) {
+			
+// 			if (newFilm.length > 21) {
+// 				newFilm = `${newFilm.substring(0, 21)}...`;
+// 			}
+			
+// 			if (favorite) {
+// 				console.log('Добавляем любимый фильм');
+// 			}
+
+// 			movieDB.movies.push(newFilm);
+// 			sortArr(movieDB.movies);
+// 			createMovieList(movieDB.movies, movieList);
+// 		}
+
+// 		event.target.reset();
+// 	});
+
+// 	const deleteAdv = (arr) => {
+// 		arr.forEach(item => {
+// 			item.remove();
+// 		});
+// 	};
+
+// 	const sortArr = (arr) => {
+// 		arr.sort();
+// 	};
+
+// 	const makeChanges = () => {
+// 		genre.textContent = 'драма';
+// 		poster.style.backgroundImage = 'url("img/bg.jpg")';
+// 	};
+
+// 	function createMovieList(films, parent) {
+// 		parent.innerHTML = '';
+// 		sortArr(films);
+
+// 		films.forEach((film, i) => {
+// 			parent.innerHTML += `
+//                 <li class="promo__interactive-item">${i + 1} ${film}
+//                     <div class="delete"></div>
+//                 </li>
+//             `;
+// 		});
+
+// 		document.querySelectorAll('.delete').forEach((btn, i) => {
+// 			btn.addEventListener('click', () => {
+// 				btn.parentElement.remove();
+// 				movieDB.movies.splice(i, 1);
+
+// 				createMovieList(films, parent);
+// 			});
+// 		});
+// 	}
+
+// 	makeChanges();
+// 	deleteAdv(adv);
+// 	createMovieList(movieDB.movies, movieList);
+
+// });
+
+
+
+
+/* 47 Рекурсия */
+
+
+// function pow(x, n) {
+//     let result = 1;
+
+//     for (let i = 0; i < n; i++) {
+//         result *= x;
+//     }
+//     return result;
+// }
+
+// function pow(x, n) {  debugger;
+//     if (n === 1) {debugger;
+//         return x;
+//     } else { debugger;
+//         return x * pow(x, n - 1);
+//     }
+// }
+
+// pow(2, 1);   /* 2 */
+// pow(2, 2);   /* 4 */
+// pow(2, 3);   /* 8 */
+// pow(2, 4);   /* 16 */
+
+
+// let students = {
+//     js: [{
+//         name: 'John',
+//         progress: 100
+//     }, {
+//         name: 'Ivan',
+//         progress: 60
+//     }],
+
+//     html: {
+//         basic: [{
+//             name: 'Peter',
+//             progress: 20
+//         }, {
+//             name: 'Ann',
+//             progress: 18
+//         }],
+
+//         pro: [{
+//             name: 'Sam',
+//             progress: 10
+//         }],
+//         // semi: {
+//         //     students: [{
+//         //         name: 'test',
+//         //         progress: 100
+//         //     }]
+//         // }
+//     }
+// };
+
+// function getProgressByIteration(data) {
+//     let total = 0;
+//     let students = 0;
+
+//     for (let course of Object.values(data)) {
+//         if (Array.isArray(course)) {
+//             students += course.length;
+
+//             for (let i = 0; i < course.length; i++) {
+//                 total += course[i].progress;
+//             }
+//         } else {
+//             for (let subCourse of Object.values(course)) {
+//                 students += subCourse.length;
+
+//                 for (let i = 0; i < subCourse.length; i++) {
+//                     total += subCourse[i].progress;
+//                 }
+//             }
+//         }
+//     }
+
+//     return total / students;
+// }
+
+// console.log(getProgressByIteration(students)); /* semi: {students: [{}]} не будет работать */
+
+
+// function getProgressByRecursion(data) {
+//     if (Array.isArray(data)) {
+//         let total = 0;
+
+//         for (let i = 0; i < data.length; i++) {
+//             total += data[i].progress;
+//         }
+//         return [total, data.length];
+//     } else {
+//         let total = [0, 0];
+//         for (let subData of Object.values(data)) {
+//             const subDataArr = getProgressByRecursion(subData);
+
+//             total[0] += subDataArr[0];
+//             total[1] += subDataArr[1];
+//         }
+
+//         return total;
+//     }
+// }
+
+// const result = getProgressByRecursion(students);
+
+// console.log(result[0] / result[1]);
+
+
+
+
+
+/* 46 */
+
+// console.log(document.body);
+// console.log(document.head);
+// console.log(document.documentElement);
+// console.log(document.body.childNodes);
+// console.log(document.body.firstChild);
+
+// console.log(document.body.firstElementChild);
+
+// console.log(document.body.lastChild);
+
+// console.log(document.querySelector('#current').parentNode.parentNode);
+
+// console.log(document.querySelector('#current').parentElement);
+
+// console.log(document.querySelector('[data-current="3"]').nextSibling);
+// console.log(document.querySelector('[data-current="3"]').previousSibling);
+
+// console.log(document.querySelector('[data-current="3"]').nextElementSibling);
+
+// for (let node of document.body.childNodes) {
+//     if (node.nodeName  == '#text' || node.nodeName == '#comment') {
+//         continue;
+//     }
+//     console.log(node);
+// }
 
 
 
@@ -20,62 +299,62 @@
 
 /* Получение элемента по уникальному идентификатору. */
 
-const box = document.getElementById('box');
+// const box = document.getElementById('box');
 
 
-/* Получение элемента по Тэгу. Отдельный элемент через [] */
+// /* Получение элемента по Тэгу. Отдельный элемент через [] */
 
-const btns = document.getElementsByTagName('button');
-
-
-/* Получение элемента по классу. Отдельный элемент через [] */
-
-const circles = document.getElementsByClassName('circle');
+// const btns = document.getElementsByTagName('button');
 
 
-/* Получение элемента по CSS селектору. К отдельному элементу через [] */
+// /* Получение элемента по классу. Отдельный элемент через [] */
 
-const hearts = document.querySelectorAll('.heart');
-
-// hearts.forEach(item => console.log(item));
+// const circles = document.getElementsByClassName('circle');
 
 
-/* Первый попавшийся элемент, работает с CSS селекторами, точки перед классом, # перед тэгом  */
+// /* Получение элемента по CSS селектору. К отдельному элементу через [] */
 
-const oneHeart = document.querySelector('.heart');
+// const hearts = document.querySelectorAll('.heart');
 
-const wrapper = document.querySelector('.wrapper');
+// // hearts.forEach(item => console.log(item));
 
 
-const div = document.createElement('div');
+// /* Первый попавшийся элемент, работает с CSS селекторами, точки перед классом, # перед тэгом  */
 
-div.classList.add('black');
+// const oneHeart = document.querySelector('.heart');
 
-wrapper.append(div);
+// const wrapper = document.querySelector('.wrapper');
 
-div.innerHTML = '<h1>Hello</h1>';
 
-div.insertAdjacentHTML('afterbegin', '<h3>By</h3>');
+// const div = document.createElement('div');
 
-div. insertAdjacentHTML('afterend', '<h3>By</h3>');
+// div.classList.add('black');
 
-div.insertAdjacentHTML('beforebegin', '<h3>By</h3>');
+// wrapper.append(div);
 
-div.textContent = 'Hello';
+// div.innerHTML = '<h1>Hello</h1>';
 
-document.querySelectorAll('.heart')[1].append(div);
+// div.insertAdjacentHTML('afterbegin', '<h3>By</h3>');
 
-document.body.append(div);
+// div. insertAdjacentHTML('afterend', '<h3>By</h3>');
 
-document.body.prepend(div);
+// div.insertAdjacentHTML('beforebegin', '<h3>By</h3>');
 
-hearts[1].before(div);
+// div.textContent = 'Hello';
 
-hearts[1].after(div);
+// document.querySelectorAll('.heart')[1].append(div);
 
-circles[0].remove();
+// document.body.append(div);
 
-hearts[0].replaceWith(circles[0]);
+// document.body.prepend(div);
+
+// hearts[1].before(div);
+
+// hearts[1].after(div);
+
+// circles[0].remove();
+
+// hearts[0].replaceWith(circles[0]);
 
 // console.log(div);
 
@@ -432,8 +711,8 @@ hearts[0].replaceWith(circles[0]);
 
 
 // const obj = {
-    // one: 1,
-    // two: 2
+//     one: 1,
+//     two: 2
 // };
 
 // const newObj = {...obj};     /* ... Spread оператор создает копию объекта */

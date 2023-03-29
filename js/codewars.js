@@ -4,27 +4,30 @@
 /* 7 kyu  7 kyu  7 kyu  7 kyu  7 kyu  7 kyu */
 
 
-function getCount(str) {
-  let sum = 0;
-  // for (let i = 0; i < str.length - 1; i++) {
-  //   if (i == 'a' || i == 'e' || i == 'o' || i == 'u' || i == 'i') {
-  //     sum += 1;
-  //   } 
-  // }
-  // return sum;
 
-  str.indexOf('a', 'e');
 
-  // str.split('').forEach((elem) => {
-  //   if (elem == 'a' || elem == 'e' || elem == 'o' || elem == 'i' || elem == 'u') {
-  //     sum += 1;
-  //   }
-  //   return sum;
-  // })
-  // return sum;
-}
 
-console.log(getCount('sjjdlhhffgaaaa aaaa fdkdii'))
+// function getCount(str) {
+//   let sum = 0;
+//   // for (let i = 0; i < str.length - 1; i++) {
+//   //   if (i == 'a' || i == 'e' || i == 'o' || i == 'u' || i == 'i') {
+//   //     sum += 1;
+//   //   } 
+//   // }
+//   // return sum;
+
+//   str.indexOf('a', 'e');
+
+//   // str.split('').forEach((elem) => {
+//   //   if (elem == 'a' || elem == 'e' || elem == 'o' || elem == 'i' || elem == 'u') {
+//   //     sum += 1;
+//   //   }
+//   //   return sum;
+//   // })
+//   // return sum;
+// }
+
+// console.log(getCount('sjjdlhhffgaaaa aaaa fdkdii'));
 
 
 // function findAverage(array) {
@@ -114,14 +117,14 @@ DNAStrand.pairs = {
 //     // return input && input.length ? [input.filter(p => p > 0).length, input.filter(n => n < 0)
 // .reduce((a, b) => a + b, 0)] : [];
 
-    /* Codewars */
+/* Codewars */
 
-    // if (!Array.isArray(input) || !input.length) return [];
-    // return input.reduce((arr, n) => {
-    // if (n > 0) arr[0]++;
-    // if (n < 0) arr[1] += n;
-    // return arr;
-    // }, [0, 0]);
+// if (!Array.isArray(input) || !input.length) return [];
+// return input.reduce((arr, n) => {
+// if (n > 0) arr[0]++;
+// if (n < 0) arr[1] += n;
+// return arr;
+// }, [0, 0]);
 
 
 //     /* Решение chatGPT */
@@ -236,7 +239,7 @@ DNAStrand.pairs = {
 /* Code from Codewars */
 
 // function maps(x){
-    // return x.map(n => n * 2);
+//     return x.map(n => n * 2);
 // }
 
 // maps = x => x.map(e => e * 2);
