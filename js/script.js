@@ -1,11 +1,27 @@
-"use strict";
+'use strict';
+
+/* Modul 3 */
+
+
+
+
+
+
+
+
 
 
 /* 50 */
 
+// function loadScript(src) {
+//     const script = document.createElement('script');
+//     script.src = src;
+//     script.async = false;
+//     document.body.append(script);
+// }
 
-
-
+// loadScript('js/test.js');
+// loadScript('js/some.js');
 
 
 
