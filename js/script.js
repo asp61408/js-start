@@ -2,6 +2,165 @@
 
 /* Modul 3 */
 
+/* 59 */
+
+
+
+
+
+/* 58 */
+
+// const user = {
+// 	firstName: 'John',
+// 	lastName: 'Smith',
+// 	birthday: '20/04/2000',
+// 	showMyPublicData: function() {
+// 		console.log(`${this.firstName} ${this.lastName}`);
+// 	}
+// };
+
+// for (let key in user) {
+// 	console.log(user[key]);
+// }
+
+// for (let key of user) {
+// 	console.log(key);                 /* Неитерируемый, for...of не работает */
+// }
+
+// const arr = ['b', 'a', 'c'];
+// Array.prototype.someMethod = function() {};
+
+// for (let key of arr) {        /* for...of не покажет someMethod, for...in покажет */
+// 	console.log(key);         /* у for...in нет Symbol.iterator */
+// }
+
+// console.dir(arr);           /* Symbol.iterator +++ */
+
+// const salaries = {
+// 	john: 500,
+// 	ivan: 1000,
+// 	ann: 5000,
+// 	sayHello: function() {
+// 		console.log('hello');
+// 	}
+// };
+
+// salaries[Symbol.iterator] = function() {
+// 	return {
+// 		current: this.john,
+// 		last: this.ann,
+
+// 		next() {
+// 			if (this.current < this.last) {
+// 				this.current += 500;
+// 				return {done: false, value: this.current};
+// 			} else {
+// 				return {done: true};
+// 			}
+
+// 		}
+// 	};
+// };
+
+// for (let res of salaries) {
+// 	console.log(res);
+// }
+
+/* Ручной вызов метода next() ниже */
+
+// const iterator = salaries[Symbol.iterator]();
+
+// console.log(iterator.next());
+
+
+
+
+/* 57 */
+
+/* Дескрипторы свойств Object */
+
+// writable:
+// enumerable:
+// configurable:
+
+
+/* 
+
+Методы объектов 
+.keys() - ключи объекта 
+.values() - значения 
+.entries() - пары ключ - значение, в виде массива (см. ниже)
+
+*/
+
+
+/* 56 */
+
+// Symbol                       /* Пересмотреть после курса, сложно и не нужно на обучении */
+
+
+
+// /* 55 */
+
+// const boxesQuery = document.querySelectorAll('.box');
+// const boxesGet = document.getElementsByClassName('box');
+
+// boxesQuery.forEach(box => {
+// 	if (box.matches('.this')) console.log(box);        /* Boolean */
+// });
+
+// console.log(boxesQuery[0].closest('.wrapper'));     /* Получение ближайшего родителя с таким классом */
+
+// boxesQuery[0].remove();
+// boxesGet[0].remove();
+
+// for (let i = 0; i < 5; i++) {
+// 	const div = document.createElement('div');
+// 	div.classList.add('box');
+// 	document.body.appendChild(div);
+// }
+
+// console.log(boxesQuery);                            /* Статичная коллекция */
+// console.log(boxesGet);                              /* Живые коллекции */
+
+// console.log(Array.from(boxesGet));                  /* Array from Псевдо array */
+
+
+/* 54 */
+
+// const box = document.querySelector('.box'),
+// 	  block = document.querySelector('.block');
+
+
+// console.log(box);
+// console.log(block?.textContent);
+
+// if (block) {
+// 	console.log(block.textContent);
+// }
+
+// const userData = {
+// 	name: 'Alex',
+// 	age: null,
+// 	say: function() {
+// 		console.log('Hello');
+// 	}
+// };
+
+// userData.say();
+// userData.hay?.();
+
+
+// console.log(userData?.skills?.textContent);
+
+
+
+/* 53 */
+
+// let userName;
+// let userKey;
+
+// console.log(userName ?? userKey ?? 'User');  /* >> User */
 
 
 
@@ -10,6 +169,8 @@
 
 
 
+
+/* The End of Modul 2 */
 
 /* 50 */
 
@@ -1669,12 +1830,12 @@
 //     skills: {
 //         languages: ['ru', 'eng'],
 //         programmingLangs: {
-    //             js: '20%',
-    //             php: '10%'
-    //         },
-    //         exp: '1 month'
-    //     }
-    // };
+//                 js: '20%',
+//                 php: '10%'
+//             },
+//             exp: '1 month'
+//         }
+// };
         
 // function showExperience() {
 //     return personalPlanPeter.skills.exp;
@@ -1740,7 +1901,7 @@
 /* Найти самое длинное слово в строке и вернуть его */
 
 // function getBigWord(str) {
-    //     const strin = str.split(' ');
+//     const strin = str.split(' ');
 //     let longWord = '';
 //     for (let i = 0; i < strin.length; i++) {
 //         if (strin[i].length > longWord.length) {
@@ -2806,33 +2967,31 @@ P.S. Функции вызывать не обязательно*/
 
 // function thirdTask() {
 //     // Значения массива менять нельзя, тут он проверяется автоматически именно на эти значения
-    // const data = [5, 10, 'Shopping', 20, 'Homework'];
-    // const result = [];
+//     const data = [5, 10, 'Shopping', 20, 'Homework'];
+//     const result = [];
 
-    // data.reverse();
+//     data.reverse();
 
-    // for (let i = 0; i < data.length; i++) {
-    //     let a = data [i];
-    //     result [i] = a;
-    // }
-    // console.log(result);
-
-
+//     for (let i = 0; i < data.length; i++) {
+//         let a = data [i];
+//         result [i] = a;
+//     }
+//     console.log(result);
 
 //     return result;
 // }
 
 
 // function firstTask() {
-    //     const arr = [3, 5, 8, 16, 20, 23, 50];
-    //     const result = [];
-    
-        // for (let i = 0; i < arr.length; i++) {
-        //         let a = arr [i];
-        //         result [i] = a;
-        //     }
-        //     console.log(result);
-        // }
+//     const arr = [3, 5, 8, 16, 20, 23, 50];
+//     const result = [];
+
+//     for (let i = 0; i < arr.length; i++) {
+//             let a = arr [i];
+//             result [i] = a;
+//         }
+//     console.log(result);
+// }
 
 
 
