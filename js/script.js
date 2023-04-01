@@ -2,7 +2,92 @@
 
 /* Modul 3 */
 
+/* 60 */
+
+
+
+
+
+
+
 /* 59 */
+
+// const user = {
+// 	firstName: 'John',
+// 	lastName: 'Smith',
+// 	birthday: '20/04/2000',
+// 	showMyPublicData: function() {
+// 		console.log(`${this.firstName} ${this.lastName}`);
+// 	}
+// };
+
+// const userMap = new Map(Object.entries(user));  /* Map from Object */
+// console.log(userMap);
+
+// const newUserObj = Object.fromEntries(userMap);  /* Object from Map */
+// console.log(newUserObj);
+
+
+// const shops = [
+// 	{rice: 500},
+// 	{oil: 200},
+// 	{bread: 50}
+// ];
+
+// // const map = new Map();      /* Создаем пустой Map */
+
+// const map = new Map([          /* [[Entries]] -- [[{paper: 400}, 8000]] */
+// 	[{paper: 400}, 8000]       /* Создаем 1-й элемент Map */
+// ]);
+
+// const budget = [5000, 15000, 25000];
+
+// shops.forEach((shop, i) => {
+// 	map.set(shop, budget[i]);    /* Добавляем значения в Map from budget */
+// });
+
+
+// map.set(shops[0], 5000)
+// 	.set(shops[1], 15000)
+// 	.set(shops[2], 25000);
+
+// console.log(map);
+// console.log(map.get(shops[0]));
+// console.log(map.has(shops[0]));
+// map.delete(key);
+// map.clear();
+// map.size;
+// map.keys();
+
+// console.log(map.keys());
+
+
+// for (let shop of map.keys()) {
+// 	console.log(shop);
+// }
+
+
+// const goods = [];
+// for (let shop of map.keys()) {
+// 	goods.push(Object.keys(shop)[0]);
+// }
+// console.log(goods);
+
+
+// for (let price of map.values()) {
+// 	console.log(price);
+// }
+
+
+// for (let [shop, price] of map.entries()) {
+// 	console.log(shop, price);
+// 	// console.log(price);
+// }
+
+
+// map.forEach((value, key, map) => {
+// 	console.log(value, key);
+// });
 
 
 
@@ -18,6 +103,8 @@
 // 		console.log(`${this.firstName} ${this.lastName}`);
 // 	}
 // };
+
+// console.log(Object.keys(user).length)    /* Просто проверил, интересно стало */
 
 // for (let key in user) {
 // 	console.log(user[key]);
