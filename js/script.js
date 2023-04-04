@@ -4,6 +4,35 @@
 
 /* 60 */
 
+// const arr = ['Ivan', 'Oleg', 'Ann', 'Alex', 'Ivan'];
+
+// function unique(arr) {
+// 	return Array.from(new Set(arr));
+// }
+
+// console.log(unique(arr));
+
+// const set = new Set(arr);
+
+// console.log(set);
+
+// set.add('Xenia');
+
+// console.log(set);
+
+// set.add();
+// set.delete(value);
+// set.has(value);
+// set.clear();
+// set.size;
+
+// set.forEach((value, valueAgain, set) => {
+// 	console.log(value, valueAgain);
+// });
+
+// for (let value of set) {
+// 	console.log(value);
+// }
 
 
 
@@ -45,6 +74,13 @@
 // shops.forEach((shop, i) => {
 // 	map.set(shop, budget[i]);    /* Добавляем значения в Map from budget */
 // });
+
+
+
+// const arr = [1, 1, 1, 2];
+// console.log(...new Set(arr));    /* 1 2 */
+
+// console.log(new Set('fjffjjf'));   /* Set(2) { 'f', 'j' } */
 
 
 // map.set(shops[0], 5000)
@@ -239,6 +275,35 @@
 
 
 // console.log(userData?.skills?.textContent);
+
+
+
+/* Проверил, как работает */
+
+// const a = {
+// 	b: 1,
+// 	c: {
+// 		e: 4,
+// 		d: 2
+// 	}
+// };
+
+// if (!a?.c.d) {
+// 	console.log('dont');
+// } else console.log('yes');
+
+// console.log(Object.keys(a));
+
+// for (let key in a) {
+// 	if (typeof(a[key]) == 'object') {
+// 		for (let i in a[key]) {
+// 			console.log(i);
+// 		}
+// 	} else console.log(key);
+// }
+
+// console.log(Object.entries(a).sort());
+// console.log(Object.values(a));
 
 
 
