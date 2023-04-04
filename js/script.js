@@ -1,8 +1,39 @@
 'use strict';
 
+/* Modul 4 */
+
+
+
+
+
+
+
+
+
+
+
 /* Modul 3 */
 
+/* 61 */
+
+// const bigint = 1027483839474758483928484773838394947473383n;
+// const someBigint = BigInt(1027483839474758483928484773838394947473383);
+
+// console.log(typeof(bigint));
+// console.log(typeof(someBigint));
+
+// console.log(2n > 1);    /* true */
+// console.log(2n < 1);    /* false */
+
+// const bigint = 2n;
+// const number = 3;
+
+// console.log(bigint + BigInt(number));
+// console.log(Number(bigint) + number);
+
+
 /* 60 */
+
 
 // const arr = ['Ivan', 'Oleg', 'Ann', 'Alex', 'Ivan'];
 
