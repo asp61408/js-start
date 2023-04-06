@@ -44,7 +44,64 @@ quu..__
 */
 
 
+
+
+
+/* Упражнение 19 */
+
+
+/* Подсчет элементов в массиве(вложенность) */
+
+
+// function deepCount(a) {
+// 	let result = a.length;
+	
+// 	a.forEach(elem => {
+// 		if (Array.isArray(elem)) {
+
+// 			result += deepCount(elem);
+// 		} else {
+
+// 			for (let value in elem) {
+
+// 				result += value;
+// 			}
+// 		}
+// 	});
+	
+// 	return result;
+// }
+
+// console.log(deepCount([1, 2, 4]));
+// console.log(deepCount([1, 2, [4]]));
+// console.log(deepCount([1, 2, [4, [5, 6]]]));
+// console.log(deepCount([[], [[[], [[[[]]]]]]]));
+
+
+
+
+
+
 /* Упражнение 18 */
+
+
+/* Проверка на вхождение всех букв латинского алфавита в строку */
+
+
+// function isPangram(string) {
+// 	const char = 'abcdefghijklmnopqrstuvwxyz';
+	
+// 	for (let i = 0; i < char.length; i++) {
+// 		if (!string.toLowerCase().includes(char[i])) {
+// 			return false;
+// 		} else return true;
+// 	}
+
+// }
+
+// console.log(isPangram('hello world'));
+// console.log(isPangram('The quick brown fox jumps over the lazy dog'));
+
 
 
 
@@ -94,6 +151,8 @@ quu..__
 // console.log(factorial(3))
 
 
+
+
 /* Код Ивана */
 
 
@@ -112,6 +171,10 @@ quu..__
 //   // Но не учитывает отрицательные значения
 //   return n ? n * factorial(n - 1) : 1;
 // }
+
+
+
+
 
 
 /* Упражнение 15 */
@@ -213,6 +276,8 @@ quu..__
 
 
 
+
+
 /* 13 task */
 
 
@@ -239,6 +304,9 @@ quu..__
 //   moneyPer1m3: 30,
 //   budget: 50000
 // };
+
+
+
 
 
 // // /* chatGPT */
@@ -273,6 +341,10 @@ quu..__
 
 
 // console.log(isBudgetEnough(shoppingMallData));
+
+
+
+
 
 
 
@@ -594,6 +666,8 @@ quu..__
 // console.log(showExperience());
 // console.log(showProgrammingLangs());
 // console.log(personalPlanPeter.showAgeAndLangs());
+
+
 
 
 
