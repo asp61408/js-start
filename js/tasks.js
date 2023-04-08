@@ -89,7 +89,7 @@ quu..__
 
 
 // function isPangram(string) {
-// 	const char = 'abcdefghijklmnopqrstuvwxyz';
+// 	const char = 'abcdefghijklmnopqrstuvwxyz';      /* Английский алфавит */
 	
 // 	for (let i = 0; i < char.length; i++) {
 // 		if (!string.toLowerCase().includes(char[i])) {
