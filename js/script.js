@@ -15,6 +15,39 @@
 
 /* 63 Делегирование событий */
 
+
+
+/*
+
+ Удаление элемента при клике на кнопку Мое решение 
+
+ */
+
+
+// const container = document.querySelector('#container'),
+// 	divPane = document.querySelectorAll('.pane'),
+// 	btnCross = document.querySelectorAll('.remove-button');
+
+// container.addEventListener('click', event => {
+// 	event.target.parentNode.remove();
+// });
+
+
+/* 
+
+Решение из учебника 
+
+*/
+
+
+// container.onclick = function(event) {
+// 	if (event.target.className != 'remove-button') return;
+
+// 	let pane = event.target.closest('.pane');
+// 	pane.remove();
+// };
+
+
 // const btns = document.querySelectorAll('button'),
 // 	wrapper = document.querySelector('.btn-block');
 
@@ -31,6 +64,7 @@
 // wrapper.addEventListener('click', event => {
 // 	if (event.target && event.target.tagName == 'BUTTON') {
 // 		console.log('Hello');
+// 		event.target.remove();
 // 	}
 // });
 
